@@ -1,0 +1,29 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 125px;
+}
+
+.profile-container>div>img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.name-container {
+  margin: 0 50px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+.profile-hr {
+  width: 20%;
+  border: 2px solid #14274e;
+  border-radius: 5px;
+  margin-top: 50px;
+}
