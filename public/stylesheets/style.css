@@ -54,6 +54,7 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: justify;
+  margin: 0 25px;
 }
 
 .travel-boards-container {
@@ -77,6 +78,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .add-btn-container {
@@ -93,7 +97,7 @@
 
 .add-btn {
   width: 20%;
-  height: 80%;
+  height: 75%;
 }
 
 .card {
