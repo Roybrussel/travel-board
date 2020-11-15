@@ -16,4 +16,9 @@ router.get("/profile-design", (req, res, next) => {
   res.render("profile-design");
 });
 
+/* GET travel-board design page */
+router.get("/travel-board-design", (req, res, next) => {
+  res.render("travel-board-design");
+});
+
 module.exports = router;

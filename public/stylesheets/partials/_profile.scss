@@ -1,10 +1,4 @@
-.profile-container {
-  display: flex;
-  justify-content: center;
-  padding-top: 125px;
-}
-
-.profile-container>div>img {
+.profile-img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -22,13 +16,6 @@
   text-align: justify;
 }
 
-.profile-hr {
-  width: 20%;
-  border: 2px solid #9ba4b4;
-  border-radius: 5px;
-  margin-top: 50px;
-}
-
 .travel-boards-container {
   display: flex;
   justify-content: space-between;
@@ -36,7 +23,21 @@
 }
 
 .boards-header {
+  padding-top: 25px;
+}
+
+.boards-heading {
   display: flex;
   justify-content: center;
-  padding-top: 25px;
+}
+
+.add-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.add-btn {
+  width: 20%;
+  height: 80%;
 }
