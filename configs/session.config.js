@@ -1,15 +1,12 @@
 const express = require('express');
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 const app = express();
+const MongoStore = require('connect-mongo')(session);
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const User = require('./models/User.model');
+const User = require('../models/User.model.js');
 const LocalStrategy = require('passport-local').Strategy;
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use(
   session({
@@ -39,18 +36,24 @@ passport.deserializeUser((id, callback) => {
 passport.use(
   new LocalStrategy(
     {
-      usernameField: 'username', // by default
-      passwordField: 'password', // by default
+      usernameField: 'email',
+      passwordField: 'passWord',
     },
-    (username, password, done) => {
-      User.findOne({ username })
+    (email, passWord, done) => {
+      User.findOne({
+        email,
+      })
         .then((user) => {
           if (!user) {
-            return done(null, false, { message: 'Incorrect username' });
+            return done(null, false, {
+              message: 'Incorrect email address',
+            });
           }
 
-          if (!bcrypt.compareSync(password, user.password)) {
-            return done(null, false, { message: 'Incorrect password' });
+          if (!bcrypt.compareSync(passWord, user.passwordHash)) {
+            return done(null, false, {
+              message: 'Incorrect password',
+            });
           }
 
           done(null, user);
@@ -59,3 +62,6 @@ passport.use(
     }
   )
 );
+
+app.use(passport.initialize());
+app.use(passport.session());

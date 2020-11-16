@@ -1,0 +1,20 @@
+<h1>Login to Your Travel Board Account</h1>
+<form action="/login" method="post">
+
+<div class="formInput">
+<label for="emailInput">Email address:</label>
+<input type="email" id="emailInput" name="email" required>
+</div>
+
+<div class="formInput">
+<label for="passWordInput">Password:</label>
+<input type="password" id="passWordInput" name="passWord" required>
+
+<button type="submit">Login</button>
+</div>
+
+</form>
+{{#if errorMessage}}
+<p class="errorMessage">{{errorMessage}}</p>
+{{/if}}
+<p>No account yet?<a href="/signup">Sign-up here</a></p>
