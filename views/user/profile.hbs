@@ -25,6 +25,15 @@
       <div class="col-sm boards-heading">
         <h1>My Travel Boards</h1>
       </div>
+{{#each userInSession.travelBoards}}
+   <div class="card">
+        <img class="card-img-top" src="{{this.travelBoardPictureUrl}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{this.country}}</h5>
+          <p class="card-text">{{this.experienceInput}}</p>
+        </div>
+      </div>
+{{/each}}
       <div class="col-sm add-btn-container">
         <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
       </div>
