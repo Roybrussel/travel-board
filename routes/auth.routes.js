@@ -52,20 +52,34 @@ router.post('/signup', (req, res, next) => {
         return;
       }
 
-      bcrypt
-        .genSalt(saltRounds)
-        .then((salt) => bcrypt.hash(passWord, salt))
-        .then((hashedPassword) => {
-          return User.create({
-            email,
-            passwordHash: hashedPassword,
-          })
-            .then((newUser) => {
-              req.user = newUser;
-              res.redirect('/profile');
-            })
-            .catch((error) => next(error));
+      bcrypt.hash(passWord, saltRounds).then((hashedPassword) => {
+        const newUser = new User({
+          email,
+          passwordHash: hashedPassword,
         });
+
+        newUser
+          .save()
+          .then(() => {
+            res.redirect('/profile');
+          })
+          .catch((error) => next(error));
+      });
+
+      // bcrypt
+      //   .genSalt(saltRounds)
+      //   .then((salt) => bcrypt.hash(passWord, salt))
+      //   .then((hashedPassword) => {
+      //     return User.create({
+      //       email,
+      //       passwordHash: hashedPassword,
+      //     })
+      //       .then((newUser) => {
+      //         req.user = newUser;
+      //         res.redirect('/profile');
+      //       })
+      //       .catch((error) => next(error));
+      //   });
     } else {
       res.render('auth/signup', {
         errorMessage: `This email has already been registered. Use a different email  or login`,

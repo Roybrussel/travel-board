@@ -12,8 +12,8 @@ app.use(
   session({
     secret: process.env.SESS_SECRET,
     name: 'appCookie',
-    resave: false,
-    saveUninitialized: true,
+    resave: true,
+    saveUninitialized: false,
     cookie: { maxAge: 60000 }, //Even uitzoeken wat een normale cookie-tijd is
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
@@ -21,6 +21,9 @@ app.use(
     }),
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 passport.serializeUser((user, callback) => {
   callback(null, user._id);
@@ -41,18 +44,18 @@ passport.use(
     },
     (email, passWord, done) => {
       User.findOne({
-        email
+        email,
       })
         .then((user) => {
           if (!user) {
             return done(null, false, {
-              message: 'Incorrect email address',
+              errorMessage: 'This email address was not recognized',
             });
           }
 
           if (!bcrypt.compareSync(passWord, user.passwordHash)) {
             return done(null, false, {
-              message: 'Incorrect password',
+              errorMessage: 'Incorrect password',
             });
           }
 
@@ -62,6 +65,3 @@ passport.use(
     }
   )
 );
-
-app.use(passport.initialize());
-app.use(passport.session());
