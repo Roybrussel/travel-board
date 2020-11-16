@@ -1,4 +1,3 @@
-<div class="container top-container">
 {{#if userInSession}}
 <section id="profile">
   <div class="container top-container">
@@ -11,7 +10,6 @@
         <p>{{userInSession.about}}</p>
         <h5>Favorite destination: {{userInSession.favoriteDestination}}</h5>
         <a href="/edit-profile/{{userInSession._id}}">Edit Profile</a>
-        <a href="/add-travel-board/{{userInSession._id}}">Add Board</a>
       </div>
     </div>
 </section>
@@ -38,17 +36,17 @@
   {{else}}
   <p>No boards to show yet, add your first board</p>
   <div class="col-sm add-btn-container">
-        <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
-      </div>
+    <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
+  </div>
   {{/if}}
 
   {{else}}
-   <button type="button" class="btn btn-dark">
-        <a href="/login">
-        Login</a></button>
-      <button type="button" class="btn btn-dark">
-        <a href="/signup">Sign-up</a>
-        </button>
-{{/if}}
-</div>
+  <button type="button" class="btn btn-dark">
+    <a href="/login">
+      Login</a></button>
+  <button type="button" class="btn btn-dark">
+    <a href="/signup">Sign-up</a>
+  </button>
+  {{/if}}
+  </div>
 </section>
