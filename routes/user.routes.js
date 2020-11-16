@@ -25,7 +25,6 @@ router.post('/edit-profile/:id', (req, res, next) => {
   const { id } = req.params;
 
   const {
-    email,
     firstName,
     lastName,
     about,
@@ -36,17 +35,15 @@ router.post('/edit-profile/:id', (req, res, next) => {
   User.findByIdAndUpdate(
     id,
     {
-      email,
       firstName,
       lastName,
       about,
       favoriteDestination,
-      profilePictureUrl
+      profilePictureUrl,
     },
     { new: true }
   )
-    .then((updatedUser) => {
-      console.log(updatedUser);
+    .then(() => {
       res.redirect('/profile');
     })
     .catch((error) => next(error));

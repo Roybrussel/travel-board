@@ -1,11 +1,6 @@
 <div class="container top-container">
   {{#if userInSession}}
-  <form action="/login" method="post">
-
-<div class="formInput">
-<label for="emailInput">Email address:</label>
-<input type="email" id="emailInput" name="email" value="{{userInSession.email}}"required>
-</div>
+<form action="/edit-profile/{{userInSession._id}}" method="post">
 
 <div class="formInput">
 <label for="firstNameInput">First name:</label>
