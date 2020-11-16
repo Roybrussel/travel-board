@@ -77,6 +77,10 @@
 .card-tag {
   text-decoration: none; }
 
+.form-container {
+  display: flex;
+  justify-content: center; }
+
 .header-img {
   max-width: 100%;
   height: auto; }

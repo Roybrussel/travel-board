@@ -1,0 +1,6 @@
+{{#if userInSession}}
+<h2>Welcome! {{userInSession.email}}</h2>
+<form id="logout-form" action="/logout" method="POST">
+    <button type="submit">Logout</button>
+  </form>
+{{/if}}
