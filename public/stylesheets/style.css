@@ -79,7 +79,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 50px;
+  padding-top: 20px;
+}
+
+.card {
+  margin-top: 50px;
 }
 
 .boards-header {

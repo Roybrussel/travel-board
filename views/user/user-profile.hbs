@@ -31,8 +31,8 @@
         <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
       </div>
     </div>
-    <div class="container travel-boards-container">
-      <div class="row">
+    <div class="container">
+      <div class="row travel-boards-container">
         {{#each userInSession.travelBoards}}
         <div class="card">
           <img class="card-img-top" src="{{this.travelBoardPictureUrl}}" alt="Card image cap">
