@@ -11,12 +11,21 @@ router.get('/signup', (req, res) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  const { email, passWord, passWordRepeat } = req.body;
+  const {
+    email,
+    firstName,
+    lastName,
+    about,
+    favoriteDestination,
+    passWord,
+    passWordRepeat,
+  } = req.body;
 
   if (!email || !passWord || !passWordRepeat) {
     res.render('auth/signup', {
       email,
-      errorMessage: 'All fields are mandatory. Please fill in all fields',
+      errorMessage:
+        'Email and password are mandatory. Please fill in these fields',
     });
     return;
   }
@@ -25,7 +34,7 @@ router.post('/signup', (req, res, next) => {
 
   if (!emailRegex.test(email)) {
     res.render('auth/signup', {
-      errorMessage: 'Please fill in a valid email ',
+      errorMessage: 'Please fill in a valid email address',
     });
     return;
   }
@@ -55,6 +64,10 @@ router.post('/signup', (req, res, next) => {
         const newUser = new User({
           email,
           passwordHash: hashedPassword,
+          firstName,
+          lastName,
+          about,
+          favoriteDestination,
         });
 
         newUser

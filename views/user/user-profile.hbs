@@ -1,6 +1,52 @@
+<div class="container top-container">
 {{#if userInSession}}
-<h2>Welcome! {{userInSession.email}}</h2>
-<form id="logout-form" action="/logout" method="POST">
-    <button type="submit">Logout</button>
-  </form>
+<section id="profile">
+  <div class="container top-container">
+    <div class="name-container">
+      <img src="images/roybrussel.jpg" class="profile-img" alt="roy">
+    </div>
+    <div class="about-container">
+      <div class="profile-content">
+        <h3>{{userInSession.firstName}} {{userInSession.lastName}}</h3>
+        <p>{{userInSession.about}}</p>
+        <h5>Favorite destination: {{userInSession.favoriteDestination}}</h5>
+        <a href="/edit-profile/{{userInSession._id}}">Edit Profile</a>
+        <a href="/add-travel-board">Add Board</a>
+      </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="travel-boards">
+  {{#if userInSession.travelBoards}}
+  <div class="container boards-header">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm boards-heading">
+        <h1>My Travel Boards</h1>
+      </div>
+      <div class="col-sm add-btn-container">
+        <a href="/profile/:id/add-travel-board" type="button" class="btn btn-dark add-btn">Add</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container travel-boards-container">
+  </div>
+  {{else}}
+  <p>No boards to show yet, add your first board <a href="/add-travel-board">Here</a></p>
+  {{/if}}
+</section>
+
+  {{else}}
+   <button type="button" class="btn btn-dark">
+        <a href="/login">
+        Login</a></button>
+      <button type="button" class="btn btn-dark">
+        <a href="/signup">Sign-up</a>
+        </button>
 {{/if}}
+
+</div>

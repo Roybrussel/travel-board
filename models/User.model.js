@@ -13,6 +13,7 @@ const userSchema = new Schema({
     default: "/images/default-profile-img.png",
   },
   favoriteDestination: String,
+  about: String,
 });
 
 module.exports = model("User", userSchema);
