@@ -1,7 +1,7 @@
 <div class="container top-container">
   <div class="container">
     <h1>Add a new Travel Board!</h1>
-    <form action="/add-travel-board" method="post">
+    <form action="/add-travel-board/{{userInSession._id}}" method="post">
       <div class="form-group">
         <label for="country">Country</label>
         <input type="text" class="form-control" id="country" name="country" placeholder="Where have you been?">
