@@ -21,17 +21,17 @@
 margin-top: 1%;
 }
 
-.test {
+.empty-travelboard-container {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 75px;
 }
 
 .travel-boards-container {
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
 }
 
 .card {
