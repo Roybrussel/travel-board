@@ -1,20 +1,20 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
 /* GET home page */
-router.get("/", (req, res, next) => {
-  res.render("index");
+router.get('/', (req, res, next) => {
+  res.render('index');
 });
 
-router.get("/profile-design", (req, res, next) => {
-  res.render("profile-design");
+router.get('/profile-design', (req, res, next) => {
+  res.render('profile-design');
 });
 
-/* GET profile page */
-router.get("/profile", (req, res, next) => {
-  res.render("profile");
-});
+// /* GET profile page */
+// router.get("/profile", (req, res, next) => {
+//   res.render("profile");
+// });
 
-console.log("");
+console.log('');
 
 module.exports = router;

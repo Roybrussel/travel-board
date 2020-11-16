@@ -15,7 +15,9 @@
         </div>
       </div>
   </section>
+
   <hr>
+
   <section id="travel-boards">
     {{#if userInSession.travelBoards}}
     <div class="container boards-header">
@@ -48,6 +50,7 @@
   <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
 </div>
 {{/if}}
+
 {{else}}
 <button type="button" class="btn btn-dark">
   <a href="/login">
