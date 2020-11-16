@@ -4,11 +4,16 @@ const router = express.Router();
 const Travelboard = require('../models/Travelboard.model');
 const User = require('../models/User.model');
 
-router.get('/profile', (req, res, next) =>
-  res.render('user/user-profile', {
-    userInSession: req.session.currentUser || null,
-  })
-);
+router.get('/profile', (req, res, next) => {
+  User.findById(req.session.currentUser._id)
+    .populate('travelBoards')
+    .then((foundUser) => {
+      res.render('user/user-profile', {
+        userInSession: foundUser || null,
+      });
+    })
+    .catch((err) => `Error while getting user from the DB: ${err}`);
+});
 
 router.get('/edit-profile/:id', (req, res, next) => {
   if (!req.session.currentUser) {
