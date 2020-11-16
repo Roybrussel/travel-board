@@ -1,0 +1,46 @@
+<div class="container top-container">
+  {{#if userInSession}}
+  <form action="/login" method="post">
+
+<div class="formInput">
+<label for="emailInput">Email address:</label>
+<input type="email" id="emailInput" name="email" value="{{userInSession.email}}"required>
+</div>
+
+<div class="formInput">
+<label for="firstNameInput">First name:</label>
+<input type="text" id="firstNameInput" name="firstName" value="{{userInSession.firstName}}">
+</div>
+
+<div class="formInput">
+<label for="lastNameInput">Last name:</label>
+<input type="text" id="lastNameInput" name="lastName" value="{{userInSession.lastName}}">
+</div>
+
+<div class="formInput">
+<label for="aboutInput">About:</label>
+<textarea type="text" id="aboutInput" name="about" value="{{userInSession.about}}"></textarea>
+</div>
+
+<div class="formInput">
+<label for="favoriteDestinationInput">Favorite destination:</label>
+<input type="text" id="favoriteDestinationInput" name="favoriteDestination" value="{{userInSession.favoriteDestination}}">
+</div>
+
+<div class="formInput">
+<label for="profilePictureUrlInput">Url to a profile picture:</label>
+<input type="text" id="profilePictureUrlInput" name="profilePictureUrl" value="{{userInSession.profilePictureUrl}}">
+</div>
+
+<button type="submit">Save changes</button>
+
+</form>
+  {{else}}
+   <button type="button" class="btn btn-dark">
+        <a href="/login">
+        Login</a></button>
+      <button type="button" class="btn btn-dark">
+        <a href="/signup">Sign-up</a>
+        </button>
+  {{/if}}
+</div>

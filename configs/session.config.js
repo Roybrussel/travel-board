@@ -9,7 +9,7 @@ module.exports = (app) => {
       resave: false,
       saveUninitialized: true,
       cookie: {
-        maxAge: 60000,
+        maxAge: 60000 * 60 * 24,
       },
       store: new MongoStore({
         mongooseConnection: mongoose.connection,
