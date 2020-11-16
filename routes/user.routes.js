@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const travelBoard = require('../models/Travelboard.model');
+const Travelboard = require('../models/Travelboard.model');
 const User = require('../models/User.model');
 
 router.get('/profile', (req, res, next) =>
@@ -49,19 +49,30 @@ router.post('/edit-profile/:id', (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.get('/add-travel-board', (req, res, next) => {
-  res.render('add-travel-board');
+router.get('/add-travel-board/:userid', (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('add-travel-board', {
+    userInSession: req.session.currentUser,
+  });
 });
 
-router.post('/add-travel-board', (req, res, next) => {
+router.post('/add-travel-board/:userid', (req, res, next) => {
+  const { userid } = req.params;
   const { country, experienceInput, travelBoardPictureUrl } = req.body;
 
-  travelBoard
-    .create({
-      country,
-      experienceInput,
-      travelBoardPictureUrl,
-    })
+  Travelboard.create({
+    user: userid,
+    country,
+    experienceInput,
+    travelBoardPictureUrl,
+  })
+    .then((newBoard) =>
+      User.findByIdAndUpdate(userid, { $push: { travelBoards: newBoard._id } })
+    )
     .then(() => res.redirect('/profile'))
     .catch((error) => `Error while creating a new Travel Board: ${error}`);
 });

@@ -3,7 +3,7 @@
 <section id="profile">
   <div class="container top-container">
     <div class="name-container">
-      <img src="images/roybrussel.jpg" class="profile-img" alt="roy">
+      <img src="{{userInSession.profilePictureUrl}}" class="profile-img" alt="roy">
     </div>
     <div class="about-container">
       <div class="profile-content">
@@ -11,7 +11,7 @@
         <p>{{userInSession.about}}</p>
         <h5>Favorite destination: {{userInSession.favoriteDestination}}</h5>
         <a href="/edit-profile/{{userInSession._id}}">Edit Profile</a>
-        <a href="/add-travel-board">Add Board</a>
+        <a href="/add-travel-board/{{userInSession._id}}">Add Board</a>
       </div>
     </div>
 </section>
@@ -28,7 +28,7 @@
         <h1>My Travel Boards</h1>
       </div>
       <div class="col-sm add-btn-container">
-        <a href="/profile/:id/add-travel-board" type="button" class="btn btn-dark add-btn">Add</a>
+        <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
       </div>
     </div>
   </div>
@@ -36,9 +36,11 @@
   <div class="container travel-boards-container">
   </div>
   {{else}}
-  <p>No boards to show yet, add your first board <a href="/add-travel-board">Here</a></p>
+  <p>No boards to show yet, add your first board</p>
+  <div class="col-sm add-btn-container">
+        <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
+      </div>
   {{/if}}
-</section>
 
   {{else}}
    <button type="button" class="btn btn-dark">
@@ -48,5 +50,5 @@
         <a href="/signup">Sign-up</a>
         </button>
 {{/if}}
-
 </div>
+</section>
