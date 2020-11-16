@@ -41,7 +41,7 @@ passport.use(
     },
     (email, passWord, done) => {
       User.findOne({
-        email,
+        email
       })
         .then((user) => {
           if (!user) {

@@ -62,13 +62,13 @@ router.post('/signup', (req, res, next) => {
           })
             .then((newUser) => {
               req.user = newUser;
-              res.redirect('/profile', { user: req.user });
+              res.redirect('/profile');
             })
             .catch((error) => next(error));
         });
     } else {
       res.render('auth/signup', {
-        errorMessage: `This email is already registered. Use a different email  or login`,
+        errorMessage: `This email has already been registered. Use a different email  or login`,
       });
     }
   });
