@@ -20,8 +20,14 @@
 
 .index-container {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
 }
@@ -38,6 +44,8 @@
 }
 
 .about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -50,7 +58,11 @@
 }
 
 .travel-boards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 50px;
 }
@@ -60,6 +72,8 @@
 }
 
 .boards-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -70,8 +84,14 @@
 }
 
 .add-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -83,17 +103,18 @@
 .card {
   width: 350px;
   -webkit-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
 }
 
 .card:hover {
+  -webkit-transform: scale(1.02);
   transform: scale(1.02);
 }
 
 .card-img-top {
   width: 100%;
   height: 150px;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -108,8 +129,14 @@
 
 .not-found {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -142,7 +169,11 @@ hr {
 }
 
 .top-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding-top: 125px;
 }
