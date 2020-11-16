@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
 const userSchema = new Schema({
@@ -7,13 +7,13 @@ const userSchema = new Schema({
   passwordHash: { type: String, required: true },
   firstName: String,
   lastName: String,
-  travelBoards: [{ type: Schema.Types.ObjectId, ref: 'Travelboard' }],
+  travelBoards: [{ type: Schema.Types.ObjectId, ref: "Travelboard" }],
   profilePictureUrl: {
     type: String,
-    default: '/images/default-profile-img.png',
+    default: "/images/default-profile-img.png",
   },
   favoriteDestination: String,
   about: String,
 });
 
-module.exports = model('User', userSchema);
+module.exports = model("User", userSchema);

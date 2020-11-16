@@ -6,9 +6,15 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
+router.get("/profile-design", (req, res, next) => {
+  res.render("profile-design");
+});
+
 /* GET profile page */
-// router.get("/profile", (req, res, next) => {
-//   res.render("profile");
-// });
+router.get("/profile", (req, res, next) => {
+  res.render("profile");
+});
+
+console.log("");
 
 module.exports = router;
