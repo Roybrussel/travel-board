@@ -1,13 +1,8 @@
-.profile-container {
-  display: flex;
-  justify-content: center;
-  padding-top: 125px;
-}
-
-.profile-container>div>img {
+.profile-img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
+  border: 5px solid #14274e;
 }
 
 .name-container {
@@ -15,15 +10,51 @@
 }
 
 .about-container {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   text-align: justify;
+  margin: 0 25px;
 }
 
-.profile-hr {
-  width: 20%;
-  border: 2px solid #14274e;
-  border-radius: 5px;
+.text-container {
+margin-top: 1%;
+}
+
+.empty-travelboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 75px;
+}
+
+.travel-boards-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
   margin-top: 50px;
+}
+
+.boards-header {
+  padding-top: 25px;
+}
+
+.boards-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.add-btn {
+  width: 20%;
+  height: 75%;
 }

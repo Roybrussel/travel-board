@@ -1,0 +1,77 @@
+{{#if userInSession}}
+<section id="profile">
+  <div class="container top-container">
+    <div class="name-container">
+      <img src="{{userInSession.profilePictureUrl}}" class="profile-img" alt="profile-img">
+    </div>
+    <div class="container about-container">
+      <div class="container profile-content">
+        <h3>{{userInSession.firstName}} {{userInSession.lastName}}</h3>
+        <a href="/edit-profile/{{userInSession._id}}">Edit Profile</a>
+        <div class="text-container">
+          <h5>About</h5>
+          <p>{{userInSession.about}}</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="travel-boards">
+  {{#if userInSession.travelBoards}}
+  <div class="container boards-header">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm boards-heading">
+        <h1>My Travel Boards</h1>
+      </div>
+      <div class="col-sm add-btn-container">
+        <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row travel-boards-container">
+        {{#each userInSession.travelBoards}}
+        <div class="card">
+          <img class="card-img-top" src="{{this.travelBoardPictureUrl}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{this.country}}</h5>
+            <p class="card-text">{{this.experienceInput}}</p>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{else}}
+    <div class="container boards-header">
+      <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm boards-heading">
+          <h1>My Travel Boards</h1>
+        </div>
+        <div class="col-sm add-btn-container">
+          <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
+        </div>
+      </div>
+      <div class="container empty-travelboard-container">
+        <div>
+          <h3>Oooops!</h3>
+          <p>It seems that you haven't added a Travel Board yet.<br>Click the add button to share one of your
+            adventures.
+          </p>
+        </div>
+      </div>
+      {{/if}}
+
+      {{else}}
+      <button type="button" class="btn btn-dark">
+        <a href="/login">
+          Login</a></button>
+      <button type="button" class="btn btn-dark">
+        <a href="/signup">Sign-up</a>
+      </button>
+      {{/if}}
+</section>
