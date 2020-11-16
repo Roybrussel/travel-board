@@ -10,11 +10,22 @@
 }
 
 .about-container {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   text-align: justify;
   margin: 0 25px;
+}
+
+.text-container {
+margin-top: 1%;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .travel-boards-container {
