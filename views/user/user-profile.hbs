@@ -4,7 +4,11 @@
     <div class="row">
       <div class="col-3">
         <div class="profile-img-container">
+          {{#if userInSession.profilePictureUrl }}
           <img src="{{userInSession.profilePictureUrl}}" class="profile-img" alt="profile-img">
+{{else}}
+<img src="/images/default-profile-img.png" class="profile-img" alt="profile-img">
+        {{/if}}
         </div>
       </div>
       <div class="col-9">

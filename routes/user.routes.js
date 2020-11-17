@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const fileUploader = require('../configs/cloudinary.config');
-const Travelboard = require('../models/Travelboard.model');
 const User = require('../models/User.model');
 
 router.get('/profile', (req, res, next) => {
@@ -46,8 +45,6 @@ router.post(
       existingProfilePic,
     } = req.body;
 
-    console.log(req.body, req.file);
-
     let profilePictureUrl;
     if (req.file) {
       profilePictureUrl = req.file.path;
@@ -55,8 +52,8 @@ router.post(
       profilePictureUrl = existingProfilePic;
     }
 
-    User.findByIdAndUpdate(
-      id,
+    User.findOneAndUpdate(
+      { id },
       {
         firstName,
         lastName,
@@ -72,33 +69,5 @@ router.post(
       .catch((error) => next(error));
   }
 );
-
-router.get('/add-travel-board/:userid', (req, res, next) => {
-  if (!req.session.currentUser) {
-    res.redirect('/login');
-    return;
-  }
-
-  res.render('add-travel-board', {
-    userInSession: req.session.currentUser,
-  });
-});
-
-router.post('/add-travel-board/:userid', (req, res, next) => {
-  const { userid } = req.params;
-  const { country, experienceInput, travelBoardPictureUrl } = req.body;
-
-  Travelboard.create({
-    user: userid,
-    country,
-    experienceInput,
-    travelBoardPictureUrl,
-  })
-    .then((newBoard) =>
-      User.findByIdAndUpdate(userid, { $push: { travelBoards: newBoard._id } })
-    )
-    .then(() => res.redirect('/profile'))
-    .catch((error) => `Error while creating a new Travel Board: ${error}`);
-});
 
 module.exports = router;
