@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/travel-board';
+const MONGODB_URI =
+  process.env.MONGODB_URI || 'mongodb://localhost/travel-board';
 
 mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+    useFindAndModify: false,
   })
   .then(() =>
     console.log(`Successfully connected to the database ${MONGODB_URI}`)
@@ -17,6 +19,3 @@ mongoose
     );
     process.exit(1);
   });
-
-
-

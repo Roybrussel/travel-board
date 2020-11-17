@@ -93,6 +93,37 @@
   display: flex;
   justify-content: center; }
 
+.login-container {
+  width: 400px;
+  height: 275px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 25px;
+  -webkit-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75); }
+
+.login-input {
+  padding: 10px; }
+
+.form-control-plaintext:focus {
+  outline: none; }
+
+.btn-primary {
+  width: 100%;
+  background-color: #394867;
+  border-style: none;
+  border-radius: 2px; }
+
+.btn-primary:hover {
+  background-color: #14274e; }
+
+.signup-or-login-text {
+  font-size: 0.9em; }
+
+.signup-or-login-text:hover {
+  color: #394867; }
+
 .header-img {
   max-width: 100%;
   height: auto; }

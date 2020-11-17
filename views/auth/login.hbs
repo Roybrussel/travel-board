@@ -1,22 +1,27 @@
-<div class="container top-container">
-<h1>Login to Your Travel Board Account</h1>
-<form action="/login" method="post">
+<div class="background-container">
+  <div class="container index-container">
+    <div class="container login-container">
+      <h3>Account Login</h3>
+      <form action="/login" method="post">
 
-<div class="formInput">
-<label for="emailInput">Email address:</label>
-<input type="email" id="emailInput" name="email" required>
+        <div class="formInput">
+          <div class="login-input">
+            <input type="email" id="emailInput" name="email" class="form-control-plaintext" placeholder="Email"
+              required>
+          </div>
+          <div class="login-input">
+            <input type="password" id="passWordInput" name="passWord" class="form-control-plaintext"
+              placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-primary mb-2">Log in</button>
+        </div>
+
+      </form>
+      {{#if errorMessage}}
+      <p class="errorMessage">{{errorMessage}}</p>
+      {{/if}}
+      <p class="signup-or-login-text"><a href="/signup">No account yet? Sign up here</a></p>
+    </div>
+  </div>
 </div>
-
-<div class="formInput">
-<label for="passWordInput">Password:</label>
-<input type="password" id="passWordInput" name="passWord" required>
-
-<button type="submit">Login</button>
-</div>
-
-</form>
-{{#if errorMessage}}
-<p class="errorMessage">{{errorMessage}}</p>
-{{/if}}
-<p>No account yet?<a href="/signup">Sign-up here</a></p>
 </div>

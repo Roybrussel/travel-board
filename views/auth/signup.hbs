@@ -1,15 +1,9 @@
-<div class="container top-container">
-<h1>Create a Travel Board Account!</h1>
+<div class="background-container">
+  <div class="container index-container">
 <form action="/signup" method="post">
-
 <div class="formInput">
 <label for="emailInput"><b>Email address:</b></label>
 <input type="email" id="emailInput" name="email" required>
-</div>
-
-<div class="formInput">
-<label for="firstNameInput">First name:</label>
-<input type="text" id="firstNameInput" name="firstName">
 </div>
 
 <div class="formInput">
@@ -44,11 +38,14 @@
 
 <button type="submit">Sign-up</button>
 </div>
-<p>Fields that are bold are mandatory</p>
+<p>Fields that are in bold are mandatory</p>
 </form>
+
 {{#if errorMessage}}
 <p class="errorMessage">{{errorMessage}}</p>
 {{/if}}
 <p>Already got an account?<a href="/login">Login here</a></p>
 </div>
 
+  </div>
+</div>

@@ -23,14 +23,12 @@ router.post(
       favoriteDestination,
       passWord,
       passWordRepeat,
-      existingProfilePic
+      existingProfilePic,
     } = req.body;
 
-    const { path } = req.file;
-
     let profilePictureUrl;
-    if (path) {
-      profilePictureUrl = path;
+    if (req.file) {
+      profilePictureUrl = req.file.path;
     } else {
       profilePictureUrl = existingProfilePic;
     }
