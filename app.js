@@ -7,6 +7,7 @@ const favicon = require("serve-favicon");
 const logger = require("morgan");
 const path = require("path");
 const passport = require("passport");
+const hbs = require('hbs');
 
 hbs.registerPartials("partials_absolute_path");
 

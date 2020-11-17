@@ -21,15 +21,9 @@
 .index-container {
   height: 100%;
   width: 400px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -50,12 +44,8 @@
 
 .about-container {
   display: inline-block;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: justify;
   margin: 0 25px;
 }
@@ -65,26 +55,16 @@
 }
 
 .empty-travelboard-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   margin-top: 75px;
 }
 
 .travel-boards-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .card {
@@ -96,27 +76,15 @@
 }
 
 .boards-heading {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .add-btn-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .add-btn {
@@ -126,26 +94,27 @@
   border-style: none;
 }
 
-.add-btn:hover, .add-btn:focus, .add-btn:active {
+.add-btn:hover,
+.add-btn:focus,
+.add-btn:active {
   background-color: #14274e !important;
 }
 
 .card {
   width: 350px;
   -webkit-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
 }
 
 .card:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .card-img-top {
   width: 100%;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card-tag {
@@ -153,12 +122,8 @@
 }
 
 .form-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .login-signup-container {
@@ -168,6 +133,7 @@
   border-radius: 4px;
   padding: 25px;
   -webkit-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
 }
 
@@ -186,7 +152,9 @@
   border-radius: 2px;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
   background-color: #14274e !important;
 }
 
@@ -205,15 +173,9 @@
 
 .not-found {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* COLOR PALETTE
@@ -221,7 +183,8 @@ Light-blue: #f1f6f9
 Grey-blue: #9ba4b4
 Navy-blue: #394867
 Blue: #14274e */
-body, html {
+body,
+html {
   height: 100%;
 }
 
@@ -244,12 +207,9 @@ hr {
 }
 
 .top-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   padding-top: 125px;
 }
+
 /*# sourceMappingURL=style.css.map */
