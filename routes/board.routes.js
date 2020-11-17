@@ -15,30 +15,34 @@ router.get('/add-travel-board/:userid', (req, res, next) => {
   });
 });
 
-router.post('/add-travel-board/:userid', fileUploader.single('profilePictureUrl'),
-(req, res, next) => {
-  const { userid } = req.params;
-  const { country, experienceInput, existingPicUrl } = req.body;
+router.post(
+  '/add-travel-board/:userid',
+  fileUploader.single('travelBoardPictureUrl'),
+  (req, res, next) => {
+    const { userid } = req.params;
+    const { country, experienceInput, existingPicUrl } = req.body;
 
+    let travelBoardPictureUrl;
+    if (req.file) {
+      travelBoardPictureUrl = req.file.path;
+    } else {
+      travelBoardPictureUrl = existingPicUrl;
+    }
 
-   let travelBoardPictureUrl;
-   if (req.file) {
-     travelBoardPictureUrl = req.file.path;
-   } else {
-     travelBoardPictureUrl = existingPicUrl;
-   }
-
-  Travelboard.create({
-    user: userid,
-    country,
-    experienceInput,
-    travelBoardPictureUrl,
-  })
-    .then((newBoard) =>
-      User.findByIdAndUpdate(userid, { $push: { travelBoards: newBoard._id } })
-    )
-    .then(() => res.redirect('/profile'))
-    .catch((error) => `Error while creating a new Travel Board: ${error}`);
-});
+    Travelboard.create({
+      user: userid,
+      country,
+      experienceInput,
+      travelBoardPictureUrl,
+    })
+      .then((newBoard) =>
+        User.findByIdAndUpdate(userid, {
+          $push: { travelBoards: newBoard._id },
+        })
+      )
+      .then(() => res.redirect('/profile'))
+      .catch((error) => `Error while creating a new Travel Board: ${error}`);
+  }
+);
 
 module.exports = router;
