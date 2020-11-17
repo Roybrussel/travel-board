@@ -1,8 +1,31 @@
 <div class="background-container">
   <div class="container index-container">
+    <div class="container login-signup-container">
+      <h3>Create An Account</h3>
+      <form action="/signup" method="post">
 
+        <div class="formInput">
+          <div class="login-input">
+            <input type="email" id="emailInput" name="email" class="form-control-plaintext" placeholder="Email"
+              required>
+          </div>
+          <div class="login-input">
+            <input type="password" id="passWordInput" name="passWord" class="form-control-plaintext"
+              placeholder="Password" required>
+          </div>
+          <div class="login-input">
+            <input type="password" id="passWordRepeatInput" name="passWordRepeat" class="form-control-plaintext"
+              placeholder="Repeat password" required>
+          </div>
+          <button type="submit" class="btn btn-primary mb-2">Sign-up</button>
+        </div>
 
-
-
+      </form>
+      {{#if errorMessage}}
+      <p class="errorMessage">{{errorMessage}}</p>
+      {{/if}}
+      <p class="signup-or-login-text"><a href="/login">Already have an account?</a></p>
+    </div>
   </div>
+</div>
 </div>

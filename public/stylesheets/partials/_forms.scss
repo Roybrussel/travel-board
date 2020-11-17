@@ -3,9 +3,9 @@
   justify-content: center;
 }
 
-.login-container {
-  width: 400px;
-  height: 275px;
+.login-signup-container {
+  max-width: 400px;
+  max-height: 100%;
   background-color: #fff;
   border-radius: 4px;
   padding: 25px;
@@ -29,8 +29,8 @@
   border-radius: 2px;
 }
 
-.btn-primary:hover {
-  background-color: #14274e;
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active  {
+  background-color: #14274e !important;
 }
 
 .signup-or-login-text {
