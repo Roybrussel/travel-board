@@ -22,6 +22,9 @@
   align-items: center;
   text-align: center; }
 
+.btn-index {
+  margin: 5px; }
+
 .profile-img {
   width: 250px;
   height: 250px;
@@ -93,9 +96,9 @@
   display: flex;
   justify-content: center; }
 
-.login-container {
-  width: 400px;
-  height: 275px;
+.login-signup-container {
+  max-width: 400px;
+  max-height: 100%;
   background-color: #fff;
   border-radius: 4px;
   padding: 25px;
@@ -115,8 +118,8 @@
   border-style: none;
   border-radius: 2px; }
 
-.btn-primary:hover {
-  background-color: #14274e; }
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: #14274e !important; }
 
 .signup-or-login-text {
   font-size: 0.9em; }

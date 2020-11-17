@@ -13,7 +13,6 @@ router.get('/signup', (req, res) => {
 
 router.post(
   '/signup',
-  fileUploader.single('profilePictureUrl'),
   (req, res, next) => {
     const {
       email,
@@ -23,15 +22,7 @@ router.post(
       favoriteDestination,
       passWord,
       passWordRepeat,
-      existingProfilePic,
     } = req.body;
-
-    let profilePictureUrl;
-    if (req.file) {
-      profilePictureUrl = req.file.path;
-    } else {
-      profilePictureUrl = existingProfilePic;
-    }
 
     if (!email || !passWord || !passWordRepeat) {
       res.render('auth/signup', {
@@ -80,7 +71,6 @@ router.post(
             lastName,
             about,
             favoriteDestination,
-            profilePictureUrl,
           });
 
           newUser
