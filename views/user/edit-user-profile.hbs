@@ -1,36 +1,34 @@
 <div class="container top-container">
   {{#if userInSession}}
-  <form action="/edit-profile/{{userInSession._id}}" method="post" enctype="multipart/form-data">
+  <div class="container login-signup-container">
+    <h3>Edit Profile</h3>
+    <form action="/edit-profile/{{userInSession._id}}" method="post" enctype="multipart/form-data">
 
-    <div class="formInput">
-      <label for="firstNameInput">First name:</label>
-      <input type="text" id="firstNameInput" name="firstName" value="{{userInSession.firstName}}">
-    </div>
-
-    <div class="formInput">
-      <label for="lastNameInput">Last name:</label>
-      <input type="text" id="lastNameInput" name="lastName" value="{{userInSession.lastName}}">
-    </div>
-
-    <div class="formInput">
-      <label for="aboutInput">About:</label>
-      <input type="text" id="aboutInput" name="about" value="{{userInSession.about}}"></input>
-    </div>
-
-    <div class="formInput">
-      <label for="favoriteDestinationInput">Favorite destination:</label>
-      <input type="text" id="favoriteDestinationInput" name="favoriteDestination"
-        value="{{userInSession.favoriteDestination}}">
-    </div>
-
-    <div class="formInput">
-      <label for="profilePictureUrlInput">Upload a profile picture:</label>
-      <input type="file" name="profilePictureUrl" id="profilePictureUrlInput">
-      <input type="text" name="existingProfilePic" hidden id="profilePictureUrlInput"
-        value="{{userInSession.profilePictureUrl}}">
-    </div>
-
-    <button type="submit">Save changes</button>
+      <div class="formInput">
+        <div class="login-input">
+          <input type="text" id="firstNameInput" name="firstName" class="form-control-plaintext"
+            placeholder="First name" value="{{userInSession.firstName}}" required>
+        </div>
+        <div class="login-input">
+          <input type="text" id="lastNameInput" name="lastName" class="form-control-plaintext" placeholder="Last name"
+            value="{{userInSession.lastName}}" required>
+        </div>
+        <div class="login-input">
+          <textarea id="aboutInput" name="about" class="form-control-plaintext about-text-container"
+            placeholder="Tell us about the great adventurer also known as {{userInSession.firstName}}." rows="5"
+            maxlength="350" value="{{userInSession.about}}"></textarea>
+        </div>
+        <div class="login-input">
+          <div>
+            <label for="profilePictureUrlInput">Upload profile picture</label>
+          </div>
+          <input type="file" name="profilePictureUrl" id="profilePictureUrlInput">
+          <input type="text" name="existingProfilePic" hidden id="profilePictureUrlInput"
+            value="{{userInSession.profilePictureUrl}}">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Save changes</button>
+      </div>
+  </div>
 
   </form>
   {{else}}

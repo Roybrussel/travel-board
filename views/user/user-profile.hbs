@@ -6,9 +6,9 @@
         <div class="profile-img-container">
           {{#if userInSession.profilePictureUrl }}
           <img src="{{userInSession.profilePictureUrl}}" class="profile-img" alt="profile-img">
-{{else}}
-<img src="/images/default-profile-img.png" class="profile-img" alt="profile-img">
-        {{/if}}
+          {{else}}
+          <img src="/images/default-profile-img.png" class="profile-img" alt="profile-img">
+          {{/if}}
         </div>
       </div>
       <div class="col-9">
@@ -17,7 +17,8 @@
           <a href="/edit-profile/{{userInSession._id}}">Edit Profile</a>
           <div class="text-container">
             <h5>About</h5>
-            <p>{{userInSession.about}}</p>
+            <p>
+              {{userInSession.about}}</p>
           </div>
         </div>
       </div>
@@ -25,7 +26,7 @@
 
 <hr>
 
-<section id="travel-boards">
+<section id=" travel-boards">
   {{#if userInSession.travelBoards}}
   <div class="container boards-header">
     <div class="row">
