@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const fileUploader = require('../configs/cloudinary.config');
-const User = require('../models/User.model');
+const fileUploader = require("../configs/cloudinary.config");
+const User = require("../models/User.model");
 
 router.get("/profile", (req, res, next) => {
   if (req.session.currentUser) {
@@ -36,7 +36,7 @@ router.post(
   fileUploader.single("profilePictureUrl"),
   (req, res, next) => {
     const { id } = req.params;
-
+    console.log(req.file);
     const {
       firstName,
       lastName,
@@ -52,8 +52,8 @@ router.post(
       profilePictureUrl = existingProfilePic;
     }
 
-    User.findOneAndUpdate(
-      { id },
+    User.findByIdAndUpdate(
+      id,
       {
         firstName,
         lastName,
@@ -63,7 +63,9 @@ router.post(
       },
       { new: true }
     )
-      .then(() => {
+      .then((user) => {
+        console.log(user);
+        req.session.currentUser = user;
         res.redirect("/profile");
       })
       .catch((error) => next(error));
