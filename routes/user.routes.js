@@ -36,7 +36,7 @@ router.post(
   fileUploader.single('profilePictureUrl'),
   (req, res, next) => {
     const { id } = req.params;
-
+    console.log(req.file);
     const {
       firstName,
       lastName,
@@ -63,7 +63,8 @@ router.post(
       },
       { new: true }
     )
-      .then(() => {
+      .then((user) => {
+        req.session.currentUser = user;
         res.redirect('/profile');
       })
       .catch((error) => next(error));
