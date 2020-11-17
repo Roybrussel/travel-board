@@ -1,48 +1,8 @@
-<div class="container top-container">
-<h1>Create a Travel Board Account!</h1>
-<form action="/signup" method="post">
+<div class="background-container">
+  <div class="container index-container">
 
-<div class="formInput">
-<label for="emailInput">Email address:</label>
-<input type="email" id="emailInput" name="email" required>
+
+
+
+  </div>
 </div>
-
-<div class="formInput">
-<label for="firstNameInput">First name:</label>
-<input type="text" id="firstNameInput" name="firstName">
-</div>
-
-<div class="formInput">
-<label for="lastNameInput">Last name:</label>
-<input type="text" id="lastNameInput" name="lastName">
-</div>
-
-<div class="formInput">
-<label for="aboutInput">About:</label>
-<textarea type="text" id="aboutInput" name="about"></textarea>
-</div>
-
-<div class="formInput">
-<label for="favoriteDestinationInput">Favorite destination:</label>
-<input type="text" id="favoriteDestinationInput" name="favoriteDestination">
-</div>
-
-<div class="formInput">
-<label for="passWordInput">Password:</label>
-<input type="password" id="passWordInput" name="passWord" required>
-</div>
-
-<div class="formInput">
-<label for="passWordRepeatInput">Repeat password:</label>
-<input type="password" id="passWordRepeatInput" name="passWordRepeat" required>
-
-<button type="submit">Sign-up</button>
-</div>
-
-</form>
-{{#if errorMessage}}
-<p class="errorMessage">{{errorMessage}}</p>
-{{/if}}
-<p>Already got an account?<a href="/login">Login here</a></p>
-</div>
-
