@@ -1,12 +1,17 @@
-.profile-img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 5px solid #14274e;
+.top-row {
+  display: inline-block;
 }
 
-.name-container {
-  margin: 0 50px;
+.profile-img-container {
+  max-width: 100%;
+  border: 5px solid #14274e;
+  border-radius: 50%;
+  overflow: hidden;
+} 
+
+.profile-img {
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .about-container {
@@ -14,11 +19,7 @@
   justify-content: center;
   align-items: center;
   text-align: justify;
-  margin: 0 25px;
-}
-
-.text-container {
-margin-top: 1%;
+  width: 100%;
 }
 
 .empty-travelboard-container {
