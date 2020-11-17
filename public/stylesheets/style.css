@@ -36,8 +36,7 @@
   overflow: hidden; }
 
 .profile-img {
-  max-width: 100%;
-  object-fit: cover; }
+  max-width: 100%; }
 
 .about-container {
   display: inline-block;
