@@ -45,6 +45,9 @@
   text-align: justify;
   width: 100%; }
 
+.text-container {
+  margin-top: 1.4em; }
+
 .empty-travelboard-container {
   display: flex;
   justify-content: center;
@@ -103,6 +106,7 @@
   justify-content: center; }
 
 .login-signup-container {
+  text-align: center;
   max-width: 400px;
   max-height: 100%;
   background-color: #fff;

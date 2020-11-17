@@ -10,7 +10,7 @@ router.get('/add-travel-board/:userid', (req, res, next) => {
     return;
   }
 
-  res.render('add-travel-board', {
+  res.render('boards/add-travel-board', {
     userInSession: req.session.currentUser,
   });
 });
@@ -44,5 +44,70 @@ router.post(
       .catch((error) => `Error while creating a new Travel Board: ${error}`);
   }
 );
+
+router.get('/edit-travel-board/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+    return;
+  }
+  console.log(req.params);
+
+  const { id } = req.params;
+
+  Travelboard.findById(id)
+    .then((travelBoard) => {
+      console.log(travelBoard);
+      res.render('boards/edit-travel-board', { travelBoard });
+    })
+    .catch((error) => next(error));
+});
+
+router.post(
+  '/edit-travel-board/:id',
+  fileUploader.single('travelBoardPictureUrl'),
+  (req, res, next) => {
+    const { id } = req.params;
+
+    const { country, experienceInput, existingBoardPictureUrl } = req.body;
+
+    let travelBoardPictureUrl;
+    if (req.file) {
+      travelBoardPictureUrl = req.file.path;
+    } else {
+      travelBoardPictureUrl = existingBoardPictureUrl;
+    }
+
+    Travelboard.findByIdAndUpdate(
+      id,
+      {
+        country,
+        experienceInput,
+        travelBoardPictureUrl,
+      },
+      { new: true }
+    )
+      .then(() => {
+        res.redirect(`/board-details/${id}`);
+      })
+      .catch((error) => next(error));
+  }
+);
+
+router.get('/board-details/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+    return;
+  }
+
+  const { id } = req.params;
+
+  Travelboard.findById(id)
+    .then((travelBoard) =>
+      res.render('boards/travelboard-details', {
+        travelBoard,
+      })
+    )
+    .catch((error) => next(error));
+});
 
 module.exports = router;

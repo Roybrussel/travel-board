@@ -1,0 +1,27 @@
+<div class="container top-container">
+  {{#if travelBoard}}
+  <div class="container">
+    <h1>Edit your board here</h1>
+    <form action="/edit-travel-board/{{travelBoard._id}}" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" id="country" name="country" value="{{travelBoard.country}}">
+      </div>
+      <div class="form-group">
+        <label for="experience">Tell us about your travel experience</label>
+        <textarea class="form-control" id="experienceInput" name="experienceInput" rows="3" maxlength="80" value="{{travelBoard.experienceInput}}"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="travelBoardPictureInput">Upload travel picture:</label>
+        <input type="file" name="travelBoardPictureUrl" id="travelBoardPictureInput" />
+        <input type="text" name="existingBoardPictureUrl" hidden id="defaultBoardPictureInput"
+          value="{{travelBoard.travelBoardPictureUrl}}">
+      </div>
+
+      <div class="container">
+        <button type="button submit" class="btn btn-dark add-btn">Save Travel Board</button>
+      </div>
+    </form>
+  </div>
+  {{/if}}
+  </div>
