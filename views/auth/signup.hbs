@@ -3,7 +3,7 @@
 <form action="/signup" method="post">
 
 <div class="formInput">
-<label for="emailInput">Email address:</label>
+<label for="emailInput"><b>Email address:</b></label>
 <input type="email" id="emailInput" name="email" required>
 </div>
 
@@ -28,17 +28,23 @@
 </div>
 
 <div class="formInput">
-<label for="passWordInput">Password:</label>
+<label for="profilePictureUrlInput">Upload a profile picture:</label>
+<input type="file" name="profilePictureUrl" id="profilePictureUrlInput" />
+<input type="text" name="existingProfilePic" hidden id="" value="/images/default-profile-img.png">
+</div>
+
+<div class="formInput">
+<label for="passWordInput"><b>Password:</b></label>
 <input type="password" id="passWordInput" name="passWord" required>
 </div>
 
 <div class="formInput">
-<label for="passWordRepeatInput">Repeat password:</label>
+<label for="passWordRepeatInput"><b>Repeat password:</b></label>
 <input type="password" id="passWordRepeatInput" name="passWordRepeat" required>
 
 <button type="submit">Sign-up</button>
 </div>
-
+<p>Fields that are bold are mandatory</p>
 </form>
 {{#if errorMessage}}
 <p class="errorMessage">{{errorMessage}}</p>
