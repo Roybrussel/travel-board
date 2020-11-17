@@ -1,6 +1,6 @@
 <div class="container top-container">
   {{#if userInSession}}
-<form action="/edit-profile/{{userInSession._id}}" method="post">
+<form action="/edit-profile/{{userInSession._id}}" method="post" enctype="multipart/form-data">
 
 <div class="formInput">
 <label for="firstNameInput">First name:</label>

@@ -46,7 +46,7 @@ router.post(
       existingProfilePic,
     } = req.body;
 
-    console.log(req.file);
+    console.log(req.body, req.file);
 
     let profilePictureUrl;
     if (req.file) {
