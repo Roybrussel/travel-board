@@ -8,10 +8,15 @@
 
 .index-container {
   height: 100%;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.btn-index {
+  margin: 5px;
 }
 
 

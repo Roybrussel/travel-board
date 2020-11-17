@@ -1,12 +1,16 @@
-.profile-img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 5px solid #14274e;
+.top-row {
+  display: inline-block;
 }
 
-.name-container {
-  margin: 0 50px;
+.profile-img-container {
+  max-width: 100%;
+  border: 5px solid #14274e;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-img {
+  max-width: 100%;
 }
 
 .about-container {
@@ -14,11 +18,11 @@
   justify-content: center;
   align-items: center;
   text-align: justify;
-  margin: 0 25px;
+  width: 100%;
 }
 
 .text-container {
-margin-top: 1%;
+  margin-top: 1.4em;
 }
 
 .empty-travelboard-container {
@@ -57,4 +61,10 @@ margin-top: 1%;
 .add-btn {
   width: 20%;
   height: 75%;
+  background-color: #394867;
+  border-style: none;
+}
+
+.add-btn:hover, .add-btn:focus, .add-btn:active  {
+  background-color: #14274e !important;
 }

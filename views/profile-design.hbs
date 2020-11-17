@@ -1,19 +1,28 @@
 <section id="profile">
   <div class="container top-container">
-    <div class="name-container">
-      <img src="images/roybrussel.jpg" class="profile-img" alt="roy">
-    </div>
-    <div class="about-container">
-      <div class="profile-content">
-        <h3>Roy-Arne Brussel</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum vitae quam sit amet rutrum. Duis
-          hendrerit tellus nec orci lacinia faucibus. Etiam cursus mi risus, eget porttitor erat posuere at. Class
-          aptent
-          taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus justo mauris, semper a
-          vulputate congue, interdum non dui.</p>
-        <h5>Favorite destination: Norway</h5>
+    <div class="row">
+      <div class="col-3">
+        <div class="profile-img-container">
+          <img src="images/roybrussel.jpg" class="profile-img" alt="roy">
+        </div>
       </div>
-    </div>
+      <div class="col-9">
+        <div class="about-container">
+          <h3>Roy-Arne Brussel</h3>
+          <a href="/edit-profile/{{userInSession._id}}">Edit Profile</a>
+          <div class="text-container">
+            <h5>About</h5>
+            <p contenteditable="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum vitae quam
+              sit amet rutrum.
+              Duis
+              hendrerit tellus nec orci lacinia faucibus. Etiam cursus mi risus, eget porttitor erat posuere at. Class
+              aptent
+              taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus justo mauris,
+              semper a
+              vulputate congue, interdum non dui.</p>
+          </div>
+        </div>
+      </div>
 </section>
 
 <hr>

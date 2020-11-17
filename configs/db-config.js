@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/travel-board';
+const MONGODB_URI =
+  process.env.MONGODB_URI || 'mongodb://localhost/travel-board';
 
 mongoose
   .connect(MONGODB_URI, {
@@ -17,6 +18,3 @@ mongoose
     );
     process.exit(1);
   });
-
-
-
