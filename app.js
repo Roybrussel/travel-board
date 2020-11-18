@@ -9,7 +9,7 @@ const path = require('path');
 const passport = require('passport');
 const hbs = require('hbs');
 
-hbs.registerPartials('partials_absolute_path');
+hbs.registerPartials(__dirname + '/views/partials');
 
 //DB config
 require('./configs/db-config');
@@ -44,7 +44,6 @@ app.use(
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
@@ -63,5 +62,8 @@ app.use('/', auth);
 
 const board = require('./routes/board.routes');
 app.use('/', board);
+
+const city = require('./routes/city.routes');
+app.use('/', city);
 
 module.exports = app;

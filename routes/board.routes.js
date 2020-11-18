@@ -56,13 +56,11 @@ router.get('/edit-travel-board/:id', (req, res, next) => {
     res.redirect('/login');
     return;
   }
-  console.log(req.params);
 
   const { id } = req.params;
 
   Travelboard.findById(id)
     .then((travelBoard) => {
-      console.log(travelBoard);
       res.render('boards/edit-travel-board', { travelBoard });
     })
     .catch((error) => next(error));
@@ -100,19 +98,15 @@ router.post(
 );
 
 router.get('/board-details/:id', (req, res, next) => {
-  if (!req.session.currentUser) {
-    res.redirect('/login');
-    return;
-  }
-
   const { id } = req.params;
 
   Travelboard.findById(id)
-    .then((travelBoard) =>
+    .populate('cities')
+    .then((travelBoard) => {
       res.render('boards/travelboard-details', {
         travelBoard,
-      })
-    )
+      });
+    })
     .catch((error) => next(error));
 });
 
