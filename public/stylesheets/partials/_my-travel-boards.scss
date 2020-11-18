@@ -18,3 +18,25 @@
 .card-tag {
   text-decoration: none;
 }
+
+.travelboard-button-container {
+  display: flex;
+}
+
+.edit-delete-btn-container {
+  display: flex;
+  justify-content: end;
+  margin: 0 auto;
+}
+
+.travelboard-btn {
+  margin-left: 1em;
+}
+
+.travelboard-icon {
+  font-size: 0.8em;
+}
+
+.edit-btn {
+  background-color: #394867;
+}
