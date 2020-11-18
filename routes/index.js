@@ -1,15 +1,20 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index', {
+router.get("/", (req, res, next) => {
+  res.render("index", {
     userInSession: req.session.currentUser,
   });
 });
 
-router.get('/profile-design', (req, res, next) => {
-  res.render('profile-design');
+router.get("/profile-design", (req, res, next) => {
+  res.render("profile-design");
 });
+
+function countChars(obj) {
+  var strLength = obj.value.length;
+  document.getElementById("currentEditProfile").innerHTML = strLength;
+}
 
 module.exports = router;

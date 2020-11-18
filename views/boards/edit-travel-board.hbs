@@ -9,9 +9,9 @@
       <div class="formInput">
         <div class="travelboard-input">
           <textarea class="form-control-plaintext" id="experienceInput" name="experienceInput" rows="3"
-            maxlength="80">{{travelBoard.experienceInput}}</textarea>
+            onkeyup="countChars(this);" maxlength="80">{{travelBoard.experienceInput}}</textarea>
           <div class="charCount">
-            <span id="currentEditTravelboard">0</span>
+            <span id="current">0</span>
             <span id="maximum">/ 80</span>
           </div>
         </div>
