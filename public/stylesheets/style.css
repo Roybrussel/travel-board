@@ -218,6 +218,9 @@ footer > div {
   display: flex;
   flex-direction: column; }
 
+.one-city img {
+  max-width: 800px; }
+
 /* COLOR PALETTE
 Light-blue: #f1f6f9
 Grey-blue: #9ba4b4
