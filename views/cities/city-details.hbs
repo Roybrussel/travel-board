@@ -1,7 +1,9 @@
 <div class="container top-container">
+  <div class="one-city">
 <h1>{{oneCity.city}}</h1>
 <img src='{{oneCity.cityPictureUrl}}' alt='{{oneCity.city}}'>
 <p>Visited between {{oneCity.startDate}} and {{oneCity.endDate}}</p>
 <p>{{oneCity.experience}}</p>
-<a href="/board-details/{{this.country}}">Back to travel board</a>
+<a href="/board-details/{{oneCity.country}}">Back to travel board</a>
+</div>
 </div>
