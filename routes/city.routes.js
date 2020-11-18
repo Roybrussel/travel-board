@@ -1,13 +1,13 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const fileUploader = require('../configs/cloudinary.config');
-const Travelboard = require('../models/Travelboard.model');
-const User = require('../models/User.model');
-const City = require('../models/City.model');
+const fileUploader = require("../configs/cloudinary.config");
+const Travelboard = require("../models/Travelboard.model");
+const User = require("../models/User.model");
+const City = require("../models/City.model");
 
-router.get('/add-city/:boardid', (req, res, next) => {
+router.get("/add-city/:boardid", (req, res, next) => {
   if (!req.session.currentUser) {
-    res.redirect('/login');
+    res.redirect("/login");
     return;
   }
 
@@ -15,7 +15,7 @@ router.get('/add-city/:boardid', (req, res, next) => {
 
   Travelboard.findById(boardid)
     .then((travelBoard) => {
-      res.render('cities/add-city', {
+      res.render("cities/add-city", {
         travelBoard,
       });
     })
@@ -23,8 +23,8 @@ router.get('/add-city/:boardid', (req, res, next) => {
 });
 
 router.post(
-  '/add-city/:boardid',
-  fileUploader.single('cityPictureUrl'),
+  "/add-city/:boardid",
+  fileUploader.single("cityPictureUrl"),
   (req, res, next) => {
     const { boardid } = req.params;
     const {
@@ -65,19 +65,19 @@ router.post(
   }
 );
 
-router.get('/city-details/:id', (req, res, next) => {
+router.get("/city-details/:id", (req, res, next) => {
   const { id } = req.params;
 
   City.findById(id)
     .then((oneCity) => {
-      res.render('cities/city-details', {
+      res.render("cities/city-details", {
         oneCity,
       });
     })
     .catch((error) => next(error));
 });
 
-router.post('/city-delete/:id', (req, res, next) => {
+router.post("/city-delete/:id", (req, res, next) => {
   const { id } = req.params;
   City.findById(id)
     .then((foundCity) => {
@@ -94,9 +94,9 @@ router.post('/city-delete/:id', (req, res, next) => {
     );
 });
 
-router.get('/edit-city/:id', (req, res, next) => {
+router.get("/edit-city/:id", (req, res, next) => {
   if (!req.session.currentUser) {
-    res.redirect('/login');
+    res.redirect("/login");
     return;
   }
 
@@ -104,14 +104,14 @@ router.get('/edit-city/:id', (req, res, next) => {
 
   City.findById(id)
     .then((oneCity) => {
-      res.render('cities/edit-city', { oneCity });
+      res.render("cities/edit-city", { oneCity });
     })
     .catch((error) => next(error));
 });
 
 router.post(
-  '/edit-city:id',
-  fileUploader.single('cityPictureUrl'),
+  "/edit-city/:id",
+  fileUploader.single("cityPictureUrl"),
   (req, res, next) => {
     const { id } = req.params;
 
