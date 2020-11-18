@@ -17,6 +17,7 @@ router.get('/add-city/:boardid', (req, res, next) => {
     .then((travelBoard) => {
       res.render('cities/add-city', {
         travelBoard,
+        userInSession: req.session.currentUser
       });
     })
     .catch((error) => next(error));
@@ -78,6 +79,7 @@ router.get('/city-details/:id', (req, res, next) => {
     .then((oneCity) => {
       res.render('cities/city-details', {
         oneCity,
+        userInSession: req.session.currentUser
       });
     })
     .catch((error) => next(error));
@@ -110,7 +112,10 @@ router.get('/edit-city/:id', (req, res, next) => {
 
   City.findById(id)
     .then((oneCity) => {
-      res.render('cities/edit-city', { oneCity });
+      res.render('cities/edit-city', {
+        oneCity,
+        userInSession: req.session.currentUser,
+      });
     })
     .catch((error) => next(error));
 });
