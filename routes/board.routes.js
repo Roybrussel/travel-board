@@ -99,25 +99,13 @@ router.post(
 
 router.get('/board-details/:id', (req, res, next) => {
   const { id } = req.params;
-  const userID = req.session.currentUser.id;
 
   Travelboard.findById(id)
     .populate('cities')
     .then((travelBoard) => {
-      if (userID === travelBoard.user) {
-        let user = req.session.currentUser;
-        res.render(
-          'boards/travelboard-details',
-          {
-            travelBoard,
-          },
-          { user }
-        );
-      } else {
-        res.render('boards/travelboard-details', {
-          travelBoard,
-        });
-      }
+      res.render('boards/travelboard-details', {
+        travelBoard,
+      });
     })
     .catch((error) => next(error));
 });
