@@ -3,20 +3,17 @@
   width: 100%;
   border: 2px solid #14274e;
   border-radius: 5px;
-  position: absolute;
-}
+  position: absolute; }
 
 .navbar {
-  position: absolute;
-}
+  position: absolute; }
 
 .background-container {
   background-image: url(/images/index-img.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 100%;
-}
+  height: 100%; }
 
 .index-container {
   height: 100%;
@@ -24,111 +21,93 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-}
+  text-align: center; }
 
 .btn-index {
-  margin: 5px;
-}
+  margin: 5px; }
 
 .top-row {
-  display: inline-block;
-}
+  display: inline-block; }
 
 .profile-img-container {
   max-width: 100%;
   border: 5px solid #14274e;
   border-radius: 50%;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 .profile-img {
-  max-width: 100%;
-}
+  max-width: 100%; }
 
 .about-container {
   display: inline-block;
   justify-content: center;
   align-items: center;
   text-align: justify;
-  width: 100%;
-}
+  width: 100%; }
 
 .text-container {
-  margin-top: 1.4em;
-}
+  margin-top: 1.4em; }
 
 .empty-travelboard-container {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 75px;
-}
+  margin-top: 75px; }
 
 .travel-boards-container {
   display: flex;
-  justify-content: space-between;
-}
+  justify-content: space-between; }
 
 .card {
-  margin-top: 50px;
-}
+  margin-top: 50px; }
 
 .boards-header {
-  padding-top: 25px;
-}
+  padding-top: 25px; }
 
 .boards-heading {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
 
 .add-btn-container {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-}
+  align-items: center; }
 
 .add-btn {
   width: 4em;
   height: 2.3em;
   background-color: #394867;
   border-style: none;
-}
+  width: 4em;
+  height: 2.3em; }
 
 .add-btn:hover,
 .add-btn:focus,
 .add-btn:active {
-  background-color: #14274e !important;
-}
+  background-color: #14274e !important; }
 
 .card {
   width: 350px;
   -webkit-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
-}
+  box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75); }
 
 .card:hover {
-  transform: scale(1.02);
-}
+  transform: scale(1.02); }
 
 .card-img-top {
   width: 100%;
   height: 150px;
-  object-fit: cover;
-}
+  object-fit: cover; }
 
 .card-tag {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 .form-container {
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .login-signup-container {
   text-align: center;
@@ -139,82 +118,65 @@
   padding: 25px;
   -webkit-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
-}
+  box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75); }
 
 .login-input {
-  padding: 10px;
-}
+  padding: 10px; }
 
 .form-control-plaintext:focus {
-  outline: none;
-}
+  outline: none; }
 
 .btn-primary {
   width: 100%;
   background-color: #394867;
   border-style: none;
-  border-radius: 2px;
-}
+  border-radius: 2px; }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-  background-color: #14274e !important;
-}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: #14274e !important; }
 
 .signup-or-login-text {
-  font-size: 0.9em;
-}
+  font-size: 0.9em; }
 
 .signup-or-login-text:hover {
-  color: #394867;
-}
+  color: #394867; }
 
 .header-img {
   max-width: 100%;
-  height: auto;
-}
+  height: auto; }
 
 .not-found {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
 
 /* COLOR PALETTE
 Light-blue: #f1f6f9
 Grey-blue: #9ba4b4
 Navy-blue: #394867
 Blue: #14274e */
-body,
-html {
-  height: 100%;
-}
+body, html {
+  height: 100%; }
 
 a {
   color: inherit;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 a:hover {
   color: inherit;
   text-decoration: none;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 hr {
   width: 20%;
   border: 2px solid #9ba4b4;
   border-radius: 5px;
-  margin-top: 50px;
-}
+  margin-top: 50px; }
 
 .top-container {
   display: flex;
   justify-content: center;
-  padding-top: 125px;
-}
+  padding-top: 125px; }
 
 /*# sourceMappingURL=style.css.map */
