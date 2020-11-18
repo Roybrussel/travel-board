@@ -110,4 +110,15 @@ router.get('/board-details/:id', (req, res, next) => {
     .catch((error) => next(error));
 });
 
+router.post('/board-delete/:id', (req, res, next) => {
+  const { id } = req.params;
+  Travelboard.findByIdAndDelete(id)
+    .then(() => res.redirect('/profile'))
+    .catch((error) =>
+      console.log(
+        `There was an error, while trying to delete the board: ${error}`
+      )
+    );
+});
+
 module.exports = router;
