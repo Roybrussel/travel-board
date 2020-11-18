@@ -136,6 +136,9 @@ footer > div {
 .edit-btn {
   background-color: #394867; }
 
+.see-more-btn:hover {
+  text-decoration: underline !important; }
+
 .form-container {
   display: flex;
   justify-content: center; }
