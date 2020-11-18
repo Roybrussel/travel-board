@@ -137,18 +137,19 @@ footer > div {
   display: flex;
   justify-content: center; }
 
-.login-signup-container {
+.login-signup-container, .add-edit-travelboard-container {
   text-align: center;
-  max-width: 400px;
+  max-width: 25em;
   max-height: 100%;
   background-color: #fff;
   border-radius: 4px;
-  padding: 25px;
+  padding: 0.8em;
+  margin-bottom: 4em;
   -webkit-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75); }
 
-.login-input {
+.login-input, .travelboard-input {
   padding: 10px; }
 
 .form-control-plaintext:focus {
@@ -206,6 +207,6 @@ hr {
 .top-container {
   display: flex;
   justify-content: center;
-  padding-top: 125px; }
+  padding-top: 8em; }
 
 /*# sourceMappingURL=style.css.map */

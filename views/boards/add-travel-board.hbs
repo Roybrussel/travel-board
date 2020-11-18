@@ -1,24 +1,36 @@
 <div class="container top-container">
-  <div class="container">
-    <h1>Add a new Travel Board!</h1>
+  {{#if userInSession}}
+  <div class="container add-edit-travelboard-container">
+    <h3>Add Travel Board!</h3>
     <form action="/add-travel-board/{{userInSession._id}}" method="post" enctype="multipart/form-data">
-      <div class="form-group">
-        <label for="country">Country</label>
-        <input type="text" class="form-control" id="country" name="country" placeholder="Where have you been?">
-      </div>
-      <div class="form-group">
-        <label for="experience">Tell us about your travel experience</label>
-        <textarea class="form-control" id="experienceInput" name="experienceInput" rows="3" maxlength="80"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="travelBoardPictureInput">Upload travel picture:</label>
-        <input type="file" name="travelBoardPictureUrl" id="travelBoardPictureInput" />
-        <input type="text" name="existingPicUrl" hidden id="defaultBoardPictureInput"
-          value="/images/default-profile-img.png">
-      </div>
+      <div class="formInput">
+        <div class="travelboard-input">
+          <input type="text" class="form-control-plaintext" id="country" name="country"
+            placeholder="Where have you been?" required>
+        </div>
+        <div class="travelboard-input">
+          <textarea class="form-control-plaintext" id="experienceInput" name="experienceInput"
+            placeholder="Tell us about your experience!" rows="2" maxlength="80"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="travelBoardPictureInput">Upload travel picture</label>
+          <input type="file" name="travelBoardPictureUrl" id="travelBoardPictureInput" />
+          <input type="text" name="existingPicUrl" hidden id="defaultBoardPictureInput"
+            value="/images/default-profile-img.png">
+        </div>
 
-      <div class="container">
-        <button type="button submit" class="btn btn-dark add-btn">Add Travel Board</button>
+        <div>
+          <button type="button submit" class="btn btn-primary mb-2">Add Travel Board</button>
+        </div>
       </div>
     </form>
   </div>
+  {{else}}
+  <button type="button" class="btn btn-dark">
+    <a href="/login">
+      Login</a></button>
+  <button type="button" class="btn btn-dark">
+    <a href="/signup">Sign-up</a>
+  </button>
+  {{/if}}
+</div>
