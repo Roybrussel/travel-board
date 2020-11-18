@@ -170,6 +170,13 @@ footer > div {
 .signup-or-login-text:hover {
   color: #394867; }
 
+.upload-container {
+  margin-top: 2em; }
+
+.charCount {
+  float: right;
+  font-size: 0.8em; }
+
 .header-img {
   max-width: 100%;
   height: auto; }

@@ -9,9 +9,13 @@
       <div class="formInput">
         <textarea class="form-control-plaintext" id="experienceInput" name="experienceInput" rows="3"
           maxlength="80">{{travelBoard.experienceInput}}</textarea>
+        <div class="charCount">
+          <span id="currentEditTravelboard">0</span>
+          <span id="maximum">/ 80</span>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="travelBoardPictureInput">Upload travel picture:</label>
+      <div class="form-group upload-container">
+        <label for="travelBoardPictureInput">Upload Photo</label>
         <input type="file" name="travelBoardPictureUrl" id="travelBoardPictureInput" />
         <input type="text" name="existingBoardPictureUrl" hidden id="defaultBoardPictureInput"
           value="{{travelBoard.travelBoardPictureUrl}}">
