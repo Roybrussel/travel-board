@@ -14,8 +14,8 @@
         </div>
         <div class="login-input">
           <textarea id="aboutInput" name="about" class="form-control-plaintext about-text-container"
-            placeholder="Tell us about the great adventurer also known as {{userInSession.firstName}}." rows="5"
-            maxlength="350">{{userInSession.about}}</textarea>
+            placeholder="Tell us about the great adventurer also known as {{userInSession.firstName}}."
+            onkeyup="countChars(this);" rows="5" maxlength="350">{{userInSession.about}}</textarea>
           <div class="charCount">
             <span id="currentEditProfile">0</span>
             <span id="maximum">/ 350</span>
