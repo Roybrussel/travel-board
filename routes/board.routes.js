@@ -4,6 +4,12 @@ const fileUploader = require('../configs/cloudinary.config');
 const Travelboard = require('../models/Travelboard.model');
 const User = require('../models/User.model');
 
+router.get('/discover', (req, res, next) => {
+  Travelboard.find({})
+    .then((allBoards) => res.render('boards/discover-boards', { allBoards }))
+    .catch((error) => next(error));
+});
+
 router.get('/add-travel-board/:userid', (req, res, next) => {
   if (!req.session.currentUser) {
     res.redirect('/login');
