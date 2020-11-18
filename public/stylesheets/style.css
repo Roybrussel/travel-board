@@ -1,12 +1,24 @@
-.navbar-hr {
-  margin-top: 65px;
-  width: 100%;
-  border: 2px solid #14274e;
-  border-radius: 5px;
-  position: absolute; }
-
 .navbar {
-  position: absolute; }
+  position: absolute;
+  width: 100% !important;
+  background-color: #E4EFF3 !important; }
+
+footer {
+  background-color: #E4EFF3; }
+
+footer > div {
+  padding: 1em;
+  display: block;
+  justify-content: center;
+  text-align: center; }
+
+.project-container {
+  height: 100%; }
+
+.copyright-container {
+  color: #FFF;
+  background-color: #394867;
+  height: 100%; }
 
 .background-container {
   background-image: url(/images/index-img.jpg);
@@ -60,10 +72,11 @@
   justify-content: space-between; }
 
 .card {
-  margin-top: 50px; }
+  margin-bottom: 3.2em; }
 
 .boards-header {
-  padding-top: 25px; }
+  margin-top: 1.6em;
+  margin-bottom: 1.6em; }
 
 .boards-heading {
   display: flex;
@@ -76,17 +89,15 @@
   align-items: center; }
 
 .add-btn {
-  width: 4em;
-  height: 2.3em;
   background-color: #394867;
-  border-style: none;
-  width: 4em;
-  height: 2.3em; }
+  border-style: none; }
 
-.add-btn:hover,
-.add-btn:focus,
-.add-btn:active {
+.add-btn:hover, .add-btn:focus, .add-btn:active {
   background-color: #14274e !important; }
+
+.logout-btn {
+  background: none !important;
+  border: none; }
 
 .card {
   width: 350px;
@@ -104,6 +115,23 @@
 
 .card-tag {
   text-decoration: none; }
+
+.travelboard-button-container {
+  display: flex; }
+
+.edit-delete-btn-container {
+  display: flex;
+  justify-content: end;
+  margin: 0 auto; }
+
+.travelboard-btn {
+  margin-left: 1em; }
+
+.travelboard-icon {
+  font-size: 0.8em; }
+
+.edit-btn {
+  background-color: #394867; }
 
 .form-container {
   display: flex;
@@ -157,7 +185,8 @@ Grey-blue: #9ba4b4
 Navy-blue: #394867
 Blue: #14274e */
 body, html {
-  height: 100%; }
+  height: 100%;
+  margin: 0 auto; }
 
 a {
   color: inherit;
@@ -172,7 +201,7 @@ hr {
   width: 20%;
   border: 2px solid #9ba4b4;
   border-radius: 5px;
-  margin-top: 50px; }
+  margin-top: 1.6em; }
 
 .top-container {
   display: flex;
