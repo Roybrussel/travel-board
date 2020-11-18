@@ -9,7 +9,7 @@ const path = require('path');
 const passport = require('passport');
 const hbs = require('hbs');
 
-hbs.registerPartials('partials_absolute_path');
+hbs.registerPartials(__dirname + '/views/partials');
 
 //DB config
 require('./configs/db-config');

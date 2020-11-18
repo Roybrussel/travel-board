@@ -100,11 +100,6 @@ router.post(
 );
 
 router.get('/board-details/:id', (req, res, next) => {
-  if (!req.session.currentUser) {
-    res.redirect('/login');
-    return;
-  }
-
   const { id } = req.params;
 
   Travelboard.findById(id)
