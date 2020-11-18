@@ -100,12 +100,27 @@ router.post(
 router.get('/board-details/:id', (req, res, next) => {
   const { id } = req.params;
 
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+    return;
+  }
+
+  let userid = req.session.currentUser._id;
+  let user = {};
+
   Travelboard.findById(id)
     .populate('cities')
     .then((travelBoard) => {
-      res.render('boards/travelboard-details', {
-        travelBoard,
-      });
+      if (userid == travelBoard.user) {
+        res.render('boards/travelboard-details', {
+          travelBoard,
+          user,
+        });
+      } else {
+        res.render('boards/travelboard-details', {
+          travelBoard,
+        });
+      }
     })
     .catch((error) => next(error));
 });

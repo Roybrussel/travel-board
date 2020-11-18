@@ -2,9 +2,9 @@
   <div class="board-details-wrapper">
     <h1>{{travelBoard.country}}</h1>
     <img src="{{travelBoard.travelBoardPictureUrl}}" alt="{{travelBoard.country}}">
-
+{{#if user}}
     <a href="/add-city/{{travelBoard._id}}" type="button" class="btn btn-dark add-btn">Add a new city</a>
-
+{{/if}}
       {{#if travelBoard.cities}}
         <div class="all-cities">
           {{#each travelBoard.cities}}
@@ -14,7 +14,7 @@
               <h5 class="card-title">{{this.city}}</h5>
               <p class="card-text">{{this.experience}}</p>
               <a href="/city-details/{{this._id}}" type="button">See more</a>
-
+{{#if user}}
                <div class="edit-delete-btn-container">
                   <a href="/edit-city/{{this._id}}" type="button"
                     class="btn btn-dark travelboard-btn edit-btn btn-sm"><i class="fas fa-pen travelboard-icon"></i></a>
@@ -23,7 +23,7 @@
                     class="fas fa-trash-alt travelboard-icon"></i></button>
                   </form>
             </div>
-
+{{/if}}
   </div>
 </div>
 {{/each}}

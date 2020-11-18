@@ -216,7 +216,9 @@ footer > div {
 
 .one-city {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 .one-city img {
   max-width: 800px; }

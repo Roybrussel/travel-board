@@ -10,9 +10,9 @@
         </div>
         <div class="travelboard-input">
           <textarea class="form-control-plaintext" id="experienceInput" name="experienceInput"
-            placeholder="Tell us about your experience!" rows="2" maxlength="80"></textarea>
+            placeholder="Tell us about your experience!" rows="2" onkeyup="countChars(this);" maxlength="80"></textarea>
           <div class="charCount">
-            <span id="currentAddTravelboard">0</span>
+            <span id="current">0</span>
             <span id="maximum">/ 80</span>
           </div>
         </div>
