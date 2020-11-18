@@ -5,6 +5,10 @@
   box-shadow: 10px 10px 46px -26px rgba(0,0,0,0.75);
 }
 
+.card-body {
+  text-align: justify;
+}
+
 .card:hover {
   transform: scale(1.02)
 }
@@ -39,4 +43,8 @@
 
 .edit-btn {
   background-color: #394867;
+}
+
+.see-more-btn:hover {
+  text-decoration: underline !important;
 }

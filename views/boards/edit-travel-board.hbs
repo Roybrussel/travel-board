@@ -7,18 +7,23 @@
         <input type="text" class="form-control-plaintext" id="country" name="country" value="{{travelBoard.country}}">
       </div>
       <div class="formInput">
-        <textarea class="form-control-plaintext" id="experienceInput" name="experienceInput" rows="3"
-          maxlength="80">{{travelBoard.experienceInput}}</textarea>
-      </div>
-      <div class="form-group">
-        <label for="travelBoardPictureInput">Upload travel picture:</label>
-        <input type="file" name="travelBoardPictureUrl" id="travelBoardPictureInput" />
-        <input type="text" name="existingBoardPictureUrl" hidden id="defaultBoardPictureInput"
-          value="{{travelBoard.travelBoardPictureUrl}}">
-      </div>
-
-      <div class="container">
-        <button type="button submit" class="btn btn-dark add-btn">Save Travel Board</button>
+        <div class="travelboard-input">
+          <textarea class="form-control-plaintext" id="experienceInput" name="experienceInput" rows="3"
+            maxlength="80">{{travelBoard.experienceInput}}</textarea>
+          <div class="charCount">
+            <span id="currentEditTravelboard">0</span>
+            <span id="maximum">/ 80</span>
+          </div>
+        </div>
+        <div class="form-group upload-container">
+          <label for="travelBoardPictureInput">Upload Photo</label>
+          <input type="file" name="travelBoardPictureUrl" id="travelBoardPictureInput" />
+          <input type="text" name="existingBoardPictureUrl" hidden id="defaultBoardPictureInput"
+            value="{{travelBoard.travelBoardPictureUrl}}">
+        </div>
+        <div>
+          <button type="button submit" class="btn btn-primary mb-2">Save Travel Board</button>
+        </div>
       </div>
     </form>
   </div>

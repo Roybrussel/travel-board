@@ -11,16 +11,19 @@
         <div class="travelboard-input">
           <textarea class="form-control-plaintext" id="experienceInput" name="experienceInput"
             placeholder="Tell us about your experience!" rows="2" maxlength="80"></textarea>
+          <div class="charCount">
+            <span id="currentAddTravelboard">0</span>
+            <span id="maximum">/ 80</span>
+          </div>
         </div>
-        <div class="form-group">
+        <div class="form-group upload-container">
           <label for="travelBoardPictureInput">Upload travel picture</label>
           <input type="file" name="travelBoardPictureUrl" id="travelBoardPictureInput" />
           <input type="text" name="existingPicUrl" hidden id="defaultBoardPictureInput"
             value="/images/default-profile-img.png">
         </div>
-
         <div>
-          <button type="button submit" class="btn btn-primary mb-2">Add Travel Board</button>
+          <button type="button submit" class="btn btn-dark add-btn">Add Travel Board</button>
         </div>
       </div>
     </form>
