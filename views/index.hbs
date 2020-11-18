@@ -2,13 +2,15 @@
   <div class="container index-container">
     <div>
       <h1>Welcome to your Travel Board</h1>
-      <p></p>
+      {{#if userInSession}}
+      {{else}}
       <div class="btn-container">
         <a href="/login"><button type="button" class="btn btn-primary btn-index btn-dark">Login</button></a>
         </button>
         <a href="/signup"><button type="button" href="/signup" class="btn btn-primary btn-index btn-dark">Sign
             up</button></a>
       </div>
+      {{/if}}
     </div>
   </div>
 </div>

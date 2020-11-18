@@ -3,7 +3,6 @@
   <div class="container login-signup-container">
     <h3>Edit Profile</h3>
     <form action="/edit-profile/{{userInSession._id}}" method="post" enctype="multipart/form-data">
-
       <div class="formInput">
         <div class="login-input">
           <input type="text" id="firstNameInput" name="firstName" class="form-control-plaintext"
@@ -15,28 +14,33 @@
         </div>
         <div class="login-input">
           <textarea id="aboutInput" name="about" class="form-control-plaintext about-text-container"
-            placeholder="Tell us about the great adventurer also known as {{userInSession.firstName}}." rows="5 "
-            maxlength="350" value="{{userInSession.about}}"></textarea>
-        </div>
-        <div class="login-input">
-          <div>
-            <label for="profilePictureUrlInput">Upload profile picture</label>
+            placeholder="Tell us about the great adventurer also known as {{userInSession.firstName}}."
+            onkeyup="countChars(this);" rows="5" maxlength="350">{{userInSession.about}}</textarea>
+          <div class="charCount">
+            <span id="currentEditProfile">0</span>
+            <span id="maximum">/ 350</span>
           </div>
-          <input type="file" name="profilePictureUrl" id="profilePictureUrlInput">
-          <input type="text" name="existingProfilePic" hidden id="profilePictureUrlInput"
-            value="{{userInSession.profilePictureUrl}}">
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Save changes</button>
       </div>
+      <div class="login-input">
+        <div>
+          <label for="profilePictureUrlInput">Upload profile picture</label>
+        </div>
+        <input type="file" name="profilePictureUrl" id="profilePictureUrlInput">
+        <input type="text" name="existingProfilePic" hidden id="profilePictureUrlInput"
+          value="{{userInSession.profilePictureUrl}}">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Save changes</button>
   </div>
+</div>
 
-  </form>
-  {{else}}
-  <button type="button" class="btn btn-dark">
-    <a href="/login">
-      Login</a></button>
-  <button type="button" class="btn btn-dark">
-    <a href="/signup">Sign-up</a>
-  </button>
-  {{/if}}
+</form>
+{{else}}
+<button type="button" class="btn btn-dark">
+  <a href="/login">
+    Login</a></button>
+<button type="button" class="btn btn-dark">
+  <a href="/signup">Sign-up</a>
+</button>
+{{/if}}
 </div>

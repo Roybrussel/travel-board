@@ -1,0 +1,34 @@
+<div class="container top-container">
+  <div class="container">
+    <h1>Edit your board</h1>
+    <form action="/edit-city/{{oneCity._id}}" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="city">Name of city or town:</label>
+        <input type="text" class="form-control" id="city" name="city" placeholder="Where have you been?" value="{{oneCity.city}}">
+      </div>
+      <div class="form-group">
+        <label for="experience">Tell us about your travel experience</label>
+        <textarea class="form-control" id="experience" name="experience" rows="3" maxlength="80">{{oneCity.experience}}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="startDate">When did your trip start?</label>
+        <input type="date" class="form-control" id="startDate" name="startDate" value="{{oneCity.startDate}}>
+      </div>
+
+      <div class="form-group">
+        <label for="endDate">When did your trip end?</label>
+        <input type="date" class="form-control" id="endDate" name="endDate" value="{{oneCity.endDate}}">
+      </div>
+
+      <div class="form-group">
+        <label for="cityPictureUrl">Upload a picture:</label>
+        <input type="file" name="cityPictureUrl" id="cityPictureUrl" />
+        <input type="text" name="existingCityPictureUrl" hidden id="defaultCityPictureInput"
+          value="{{oneCity.cityPictureUrl}}">
+      </div>
+
+      <div class="container">
+        <button type="button submit" class="btn btn-dark add-btn">Save changes</button>
+      </div>
+    </form>
+  </div>

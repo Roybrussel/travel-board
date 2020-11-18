@@ -1,11 +1,25 @@
-.navbar-hr {
-  margin-top: 65px;
-  width: 100%;
-  border: 2px solid #14274e;
-  border-radius: 5px;
-  position: absolute;
-}
-
 .navbar {
   position: absolute;
+  width: 100% !important;
+  background-color: #E4EFF3 !important;
+}
+
+footer {
+  background-color: #E4EFF3;
+}
+
+footer > div {  
+  padding: 1em;
+  display: block;
+  justify-content: center;
+  text-align: center;
+}
+.project-container {
+  height: 100%;
+}
+
+.copyright-container {
+  color: #FFF;
+  background-color: #394867;
+  height: 100%;
 }

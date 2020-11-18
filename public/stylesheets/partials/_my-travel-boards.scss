@@ -5,6 +5,10 @@
   box-shadow: 10px 10px 46px -26px rgba(0,0,0,0.75);
 }
 
+.card-body {
+  text-align: justify;
+}
+
 .card:hover {
   transform: scale(1.02)
 }
@@ -17,4 +21,30 @@
 
 .card-tag {
   text-decoration: none;
+}
+
+.travelboard-button-container {
+  display: flex;
+}
+
+.edit-delete-btn-container {
+  display: flex;
+  justify-content: end;
+  margin: 0 auto;
+}
+
+.travelboard-btn {
+  margin-left: 1em;
+}
+
+.travelboard-icon {
+  font-size: 0.8em;
+}
+
+.edit-btn {
+  background-color: #394867;
+}
+
+.see-more-btn:hover {
+  text-decoration: underline !important;
 }

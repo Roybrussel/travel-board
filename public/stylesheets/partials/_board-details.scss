@@ -1,0 +1,25 @@
+.board-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-details-wrapper img {
+  max-width: 800px;
+}
+
+.board-details-wrapper .btn {
+  max-width: 8em;
+}
+
+.all-cities {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-cities .card {
+  margin: 2%;
+}

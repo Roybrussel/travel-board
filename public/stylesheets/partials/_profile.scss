@@ -39,17 +39,18 @@
 }
 
 .card {
-  margin-top: 50px;
+  margin-bottom: 3.2em;
 }
 
 .boards-header {
-  padding-top: 25px;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
 }
 
 .boards-heading {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
 }
 
 .add-btn-container {
@@ -59,12 +60,15 @@
 }
 
 .add-btn {
-  width: 20%;
-  height: 75%;
   background-color: #394867;
   border-style: none;
 }
 
 .add-btn:hover, .add-btn:focus, .add-btn:active  {
   background-color: #14274e !important;
+}
+
+.logout-btn {
+  background: none !important;
+  border: none; 
 }

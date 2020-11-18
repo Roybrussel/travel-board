@@ -1,12 +1,15 @@
+ <div class="container top-container">
+<h1>Discover the world</h1>
+<div class="allBoards">
+{{#each allBoards}}
 <div class="card">
   <img class="card-img-top" src="{{this.travelBoardPictureUrl}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{this.country}}</h5>
     <p class="card-text">{{this.experienceInput}}</p>
-    <a href="/edit-travel-board/{{this._id}}" type="button" class="btn btn-dark add-btn">Edit</a>
     <a href="/board-details/{{this._id}}" type="button" class="btn btn-dark add-btn">More</a>
-    <form action="//board-delete/{{this._id}}" method="post">
-      <button type="submit">Delete</button>
-    </form>
   </div>
+</div>
+{{/each}}
+</div>
 </div>
