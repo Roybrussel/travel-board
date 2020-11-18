@@ -61,6 +61,7 @@ router.get('/edit-travel-board/:id', (req, res, next) => {
   const { id } = req.params;
 
   Travelboard.findById(id)
+    .populate('cities')
     .then((travelBoard) => {
       console.log(travelBoard);
       res.render('boards/edit-travel-board', { travelBoard });

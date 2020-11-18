@@ -63,4 +63,7 @@ app.use('/', auth);
 const board = require('./routes/board.routes');
 app.use('/', board);
 
+const city = require('./routes/city.routes');
+app.use('/', city);
+
 module.exports = app;

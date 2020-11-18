@@ -1,4 +1,21 @@
 <div class="container top-container">
 <h1>{{travelBoard.country}}</h1>
-<img src="{{travelBoard.travelBoardPictureUrl}}" alt="">
+<img src="{{travelBoard.travelBoardPictureUrl}}" alt="{{travelBoard.country}}">
+<a href="/add-city/{{travelBoard._id}}">Add a city Board</a>
+{{#if travelBoard.cities}}
+{{#each travelBoard.cities}}
+     <div class="card">
+  <img class="card-img-top" src="{{this.cityPictureUrl}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{this.city}}</h5>
+    <p class="card-text">{{this.experience}}</p>
+     <a href="/edit-city/{{this._id}}" type="button" class="btn btn-dark add-btn">Edit</a>
+    <a href="/city-details/{{this._id}}" type="button" class="btn btn-dark add-btn">See more</a>
+    <form action="/city-delete/{{this._id}}" method="post">
+<button type="submit">Delete</button>
+</form>
+  </div>
+</div>
+{{/each}}
+{{/if}}
 </div>
