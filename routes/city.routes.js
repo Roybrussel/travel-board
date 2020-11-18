@@ -110,7 +110,7 @@ router.get('/edit-city/:id', (req, res, next) => {
 });
 
 router.post(
-  '/edit-city:id',
+  '/edit-city/:id',
   fileUploader.single('cityPictureUrl'),
   (req, res, next) => {
     const { id } = req.params;
