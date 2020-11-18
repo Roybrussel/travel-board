@@ -36,7 +36,7 @@ router.post(
   fileUploader.single('profilePictureUrl'),
   (req, res, next) => {
     const { id } = req.params;
-  
+
     const {
       firstName,
       lastName,

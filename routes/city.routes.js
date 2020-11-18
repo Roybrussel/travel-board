@@ -53,8 +53,13 @@ router.post(
       .then((newCity) => {
         Travelboard.findByIdAndUpdate(boardid, {
           $push: { cities: newCity._id },
+        }).then((foundBoard) => {
+          City.findByIdAndUpdate(newCity._id, {
+            user: foundBoard.user,
+          }).then((updatedCity) =>
+            res.redirect(`/city-details/${updatedCity._id}`)
+          );
         });
-        res.redirect(`/city-details/${newCity._id}`);
       })
       .catch((error) => `Error while creating a new city: ${error}`);
   }
@@ -87,6 +92,13 @@ router.post('/city-delete/:id', (req, res, next) => {
         `There was an error, while trying to delete the board: ${error}`
       )
     );
+});
+
+router.get('/edit-city/cityid', (req, res, next) => {
+  const { cityid } = req.params;
+
+
+  City.findById(cityid);
 });
 
 module.exports = router;
