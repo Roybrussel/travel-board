@@ -7,6 +7,11 @@ const router = new Router();
 const saltRounds = 10;
 
 router.get('/signup', (req, res) => {
+  if (req.session.currentUser) {
+    res.redirect('/profile');
+    return;
+  }
+
   res.render('auth/signup');
 });
 
@@ -86,7 +91,14 @@ router.post('/signup', (req, res, next) => {
   });
 });
 
-router.get('/login', (req, res) => res.render('auth/login'));
+router.get('/login', (req, res) => {
+  if (req.session.currentUser) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('auth/login');
+});
 
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, theUser, failureDetails) => {

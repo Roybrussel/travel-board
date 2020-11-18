@@ -63,8 +63,12 @@
   height: 2.3em;
   background-color: #394867;
   border-style: none;
+  width: 4em;
+  height: 2.3em;
 }
 
-.add-btn:hover, .add-btn:focus, .add-btn:active  {
+.add-btn:hover,
+.add-btn:focus,
+.add-btn:active {
   background-color: #14274e !important;
 }
