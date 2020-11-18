@@ -51,17 +51,25 @@ router.post(
       cityPictureUrl,
     })
       .then((newCity) => {
-        console.log(newCity),
           Travelboard.findByIdAndUpdate(boardid, {
             $push: { cities: newCity._id },
           });
       })
-      .then((updatedBoard) => {
-        travelBoard = updatedBoard;
-        res.redirect(`/board-details/${boardid}`);
-      })
-      .catch((error) => `Error while creating a new Travel Board: ${error}`);
+      .then((newCity) => res.redirect(`/city-details/${newCity._id}`))
+      .catch((error) => `Error while creating a new city: ${error}`);
   }
 );
+
+router.get('/city-details/:id', (req, res, next) => {
+  const { id } = req.params;
+
+  City.findById(id)
+    .then((oneCity) => {
+      res.render('cities/city-details', {
+        oneCity,
+      });
+    })
+    .catch((error) => next(error));
+});
 
 module.exports = router;

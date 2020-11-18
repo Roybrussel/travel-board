@@ -56,14 +56,11 @@ router.get('/edit-travel-board/:id', (req, res, next) => {
     res.redirect('/login');
     return;
   }
-  console.log(req.params);
 
   const { id } = req.params;
 
   Travelboard.findById(id)
-    .populate('cities')
     .then((travelBoard) => {
-      console.log(travelBoard);
       res.render('boards/edit-travel-board', { travelBoard });
     })
     .catch((error) => next(error));
@@ -104,11 +101,12 @@ router.get('/board-details/:id', (req, res, next) => {
   const { id } = req.params;
 
   Travelboard.findById(id)
-    .then((travelBoard) =>
+    .populate('cities')
+    .then((travelBoard) => {
       res.render('boards/travelboard-details', {
         travelBoard,
-      })
-    )
+      });
+    })
     .catch((error) => next(error));
 });
 
