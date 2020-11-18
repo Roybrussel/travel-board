@@ -179,12 +179,24 @@ footer > div {
   justify-content: center;
   align-items: center; }
 
+.board-details-wrapper {
+  display: flex;
+  flex-direction: column; }
+
+.board-details-wrapper img {
+  max-width: 300px; }
+
+.one-city {
+  display: flex;
+  flex-direction: column; }
+
 /* COLOR PALETTE
 Light-blue: #f1f6f9
 Grey-blue: #9ba4b4
 Navy-blue: #394867
 Blue: #14274e */
-body, html {
+body,
+html {
   height: 100%;
   margin: 0 auto; }
 
