@@ -7,7 +7,9 @@
       <p>A board by {{travelBoard.user.firstName}} {{travelBoard.user.lastName}}</p>
     </div>
     <hr>
+    {{#if user}}
     <a href="/add-city/{{travelBoard._id}}" type="button" class="btn btn-dark add-city-btn">Add new city</a>
+   {{/if}}
     {{#if travelBoard.cities}}
     <div class="all-cities">
       {{#each travelBoard.cities}}

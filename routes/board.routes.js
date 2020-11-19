@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fileUploader = require('../configs/cloudinary.config');
-const Travelboard = require('../models/Travelboard.model');
+const Travelboard = require('../models/travelboard.model');
 const User = require('../models/User.model');
 
 router.get('/discover', (req, res, next) => {
@@ -123,16 +123,19 @@ router.get('/board-details/:id', (req, res, next) => {
     .populate('user')
     .populate('cities')
     .then((travelBoard) => {
-      if (userid == travelBoard.user) {
+      if (userid == travelBoard.user._id) {
+        console.log('the same');
         res.render('boards/travelboard-details', {
           travelBoard,
           user,
-          userInSession: req.session.currentUser
+          userInSession: req.session.currentUser,
         });
       } else {
+        console.log('not the same');
         res.render('boards/travelboard-details', {
           travelBoard,
-          userInSession: req.session.currentUser
+          userInSession: req.session.currentUser,
+          user: false,
         });
       }
     })

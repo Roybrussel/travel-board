@@ -218,7 +218,16 @@ footer > div {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+<<<<<<< HEAD
   align-items: center; }
+=======
+  align-items: center;
+  margin-bottom: 1.6em;
+  width: 100%; }
+
+.all-cities .card {
+  margin: 2%; }
+>>>>>>> 5380969c3d56ff3a8839f0fc856e195b8f86a505
 
 .country-img {
   width: 100%;
@@ -230,7 +239,9 @@ footer > div {
   border-style: none;
   margin: 1em; }
 
-.add-city-btn:hover, .add-city-btn:focus, .add-city-btn:active {
+.add-city-btn:hover,
+.add-city-btn:focus,
+.add-city-btn:active {
   background-color: #14274e !important; }
 
 .one-city {
