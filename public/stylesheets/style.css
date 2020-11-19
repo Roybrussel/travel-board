@@ -49,13 +49,16 @@ footer {
   display: inline-block; }
 
 .profile-img-container {
+  width: 50em;
   max-width: 100%;
+  height: auto;
   border: 5px solid #14274e;
   border-radius: 50%;
   overflow: hidden; }
 
 .profile-img {
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto; }
 
 .about-container {
   display: inline-block;
@@ -72,7 +75,8 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 75px; }
+  margin-top: 0.8em;
+  margin-bottom: 0.8em; }
 
 .travel-boards-container {
   display: flex;
@@ -257,7 +261,8 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 1.6em; }
+  margin-top: 0.8em;
+  margin-bottom: 0.8em; }
 
 .one-city {
   display: flex;
