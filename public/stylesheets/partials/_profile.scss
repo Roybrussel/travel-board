@@ -35,11 +35,14 @@
 
 .travel-boards-container {
   display: flex;
-  justify-content: space-between;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
   margin-bottom: 3.2em;
+  margin-left: 1.2em;
 }
 
 .boards-header {
