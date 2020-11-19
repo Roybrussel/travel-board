@@ -38,11 +38,16 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 1.6em;
 }
 
 .card {
   margin-bottom: 3.2em;
   margin-left: 1.2em;
+}
+
+.card-text {
+  height: 2.5em;
 }
 
 .boards-header {

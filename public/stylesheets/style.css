@@ -6,19 +6,26 @@
 footer {
   background-color: #E4EFF3; }
 
-footer > div {
-  padding: 1em;
-  display: block;
-  justify-content: center;
-  text-align: center; }
-
 .project-container {
-  height: 100%; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.footer-header-container {
+  margin-top: 1em; }
 
 .copyright-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
   color: #FFF;
-  background-color: #394867;
-  height: 100%; }
+  background-color: #394867; }
+
+.credits-container {
+  margin-bottom: 1em; }
 
 .background-container {
   background-image: url(/images/index-img.jpg);
@@ -71,11 +78,15 @@ footer > div {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 1.6em; }
 
 .card {
   margin-bottom: 3.2em;
   margin-left: 1.2em; }
+
+.card-text {
+  height: 2.5em; }
 
 .boards-header {
   margin-top: 1.6em;
@@ -109,7 +120,8 @@ footer > div {
   box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75); }
 
 .card-body {
-  text-align: justify; }
+  text-align: justify;
+  overflow: hidden; }
 
 .card:hover {
   transform: scale(1.02); }
@@ -218,16 +230,7 @@ footer > div {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-<<<<<<< HEAD
   align-items: center; }
-=======
-  align-items: center;
-  margin-bottom: 1.6em;
-  width: 100%; }
-
-.all-cities .card {
-  margin: 2%; }
->>>>>>> 5380969c3d56ff3a8839f0fc856e195b8f86a505
 
 .country-img {
   width: 100%;
