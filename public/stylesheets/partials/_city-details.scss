@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: unset;
-  width: 100%;
+  width: 80%;
   height: 35em;
   display: flex;
   flex-direction: column;
@@ -29,18 +29,18 @@
 }
 
 .city-heading h1 {
-  font-size: 4em;
-  font-weight: 700;
+  font-size: 3em;
+  font-weight: 600;
 }
 
 .city-heading p {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: 600;
 }
 
 .city-heading h2 {
-  font-size: 3em;
-  font-weight: 700;
+  font-size: 2em;
+  font-weight: 600;
 }
 
 .one-city .edit-delete-btn-container {

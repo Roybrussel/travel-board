@@ -1,0 +1,52 @@
+{{#if foundUser}}
+<section id="profile">
+  <div class="container top-container">
+    <div class="row">
+      <div class="col-3">
+        <div class="profile-img-container">
+          {{#if foundUser.profilePictureUrl }}
+          <img src="{{foundUser.profilePictureUrl}}" class="profile-img" alt="profile-img">
+          {{else}}
+          <img src="/images/default-profile-img.png" class="profile-img" alt="profile-img">
+          {{/if}}
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="about-container">
+          <h3>{{foundUser.firstName}} {{foundUser.lastName}}</h3>
+          <div class="text-container">
+            <h5>About</h5>
+            <p>
+              {{foundUser.about}}</p>
+          </div>
+        </div>
+      </div>
+</section>
+<hr>
+<section id=" travel-boards">
+  <div class="container boards-header">
+    <div class="row">
+      <div class="col-sm other-profile">
+         <h1>{{foundUser.firstName}}'s Travel Boards</h1>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    {{#if foundUser.travelBoards}}
+    <div class="travel-boards-container">
+      {{#each foundUser.travelBoards}}
+   {{> otheruserboardpartial this}}
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+    {{else}}
+    <button type="button" class="btn btn-dark">
+      <a href="/login">
+        Login</a></button>
+    <button type="button" class="btn btn-dark">
+      <a href="/signup">Sign-up</a>
+    </button>
+    {{/if}}
+</section>

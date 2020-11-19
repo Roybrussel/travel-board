@@ -106,12 +106,20 @@ footer {
   background-color: #394867;
   border-style: none; }
 
-.add-btn:hover, .add-btn:focus, .add-btn:active {
+.add-btn:hover,
+.add-btn:focus,
+.add-btn:active {
   background-color: #14274e !important; }
 
 .logout-btn {
   background: none !important;
   border: none; }
+
+.other-profile {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .card {
   width: 350px;
@@ -151,7 +159,8 @@ footer {
 .edit-btn {
   background-color: #394867; }
 
-.see-more-btn:hover {
+.see-more-btn:hover,
+.profile-link:hover {
   text-decoration: underline !important; }
 
 .form-container {
@@ -252,7 +261,8 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 1.6em; }
+  margin-top: 0.8em;
+  margin-bottom: 0.8em; }
 
 .one-city {
   display: flex;
@@ -267,7 +277,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: unset;
-  width: 100%;
+  width: 80%;
   height: 35em;
   display: flex;
   flex-direction: column;
@@ -282,16 +292,16 @@ footer {
   max-width: 25em; }
 
 .city-heading h1 {
-  font-size: 4em;
-  font-weight: 700; }
+  font-size: 3em;
+  font-weight: 600; }
 
 .city-heading p {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: 600; }
 
 .city-heading h2 {
-  font-size: 3em;
-  font-weight: 700; }
+  font-size: 2em;
+  font-weight: 600; }
 
 .one-city .edit-delete-btn-container {
   margin: 4%; }

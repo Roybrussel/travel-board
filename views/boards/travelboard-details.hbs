@@ -13,16 +13,7 @@
     {{#if travelBoard.cities}}
     <div class="all-cities">
       {{#each travelBoard.cities}}
-      <div class="card">
-        <img class="card-img-top" src="{{this.cityPictureUrl}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{this.city}}</h5>
-          <p class="card-text">{{this.experience}}</p>
-          <div class="travelboard-button-container">
-            <a href="/city-details/{{this._id}}" type="button">See more</a>
-          </div>
-        </div>
-      </div>
+{{> citypartial this}}
       {{/each}}
     </div>
     {{else}}
@@ -34,6 +25,5 @@
       </div>
     </div>
     {{/if}}
-
   </div>
 </div>

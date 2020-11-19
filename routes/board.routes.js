@@ -6,6 +6,7 @@ const User = require('../models/User.model');
 
 router.get('/discover', (req, res, next) => {
   Travelboard.find({})
+    .populate('user')
     .then((allBoards) => {
       if (req.session.currentUser) {
         userInSession = req.session.currentUser;
@@ -124,14 +125,12 @@ router.get('/board-details/:id', (req, res, next) => {
     .populate('cities')
     .then((travelBoard) => {
       if (userid == travelBoard.user._id) {
-        console.log('the same');
         res.render('boards/travelboard-details', {
           travelBoard,
           user,
           userInSession: req.session.currentUser,
         });
       } else {
-        console.log('not the same');
         res.render('boards/travelboard-details', {
           travelBoard,
           userInSession: req.session.currentUser,

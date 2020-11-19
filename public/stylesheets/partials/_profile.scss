@@ -58,7 +58,7 @@
 .boards-heading {
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 
 .add-btn-container {
@@ -72,11 +72,20 @@
   border-style: none;
 }
 
-.add-btn:hover, .add-btn:focus, .add-btn:active  {
+.add-btn:hover,
+.add-btn:focus,
+.add-btn:active {
   background-color: #14274e !important;
 }
 
 .logout-btn {
   background: none !important;
-  border: none; 
+  border: none;
+}
+
+.other-profile {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
