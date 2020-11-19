@@ -8,18 +8,34 @@ footer {
   background-color: #E4EFF3;
 }
 
-footer > div {  
-  padding: 1em;
-  display: block;
-  justify-content: center;
-  text-align: center;
-}
+// .project-container {  
+//   padding: 1em;
+//   display: block;
+//   justify-content: center;
+//   text-align: center;
+// }
+
 .project-container {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-header-container {
+  margin-top: 1em;
 }
 
 .copyright-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
   color: #FFF;
-  background-color: #394867;
-  height: 100%;
+  background-color: #394867; 
+}
+
+.credits-container {
+  margin-bottom: 1em;
 }
