@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container top-container">
   <div class="one-city">
 <<<<<<< HEAD
@@ -11,9 +12,23 @@
 =======
 <h1 class="city-header">{{oneCity.city}}</h1>
 <img src='{{oneCity.cityPictureUrl}}' alt='{{oneCity.city}}'>
+=======
+<div class="one-city">
+    <div class="city-heading" style="background-image: url({{oneCity.cityPictureUrl}})">
+      <div class="heading-text">
+      <h1>{{oneCity.city}}</h1>
+      <p>in</p>
+      <h2>{{oneCity.country.country}}</h2>
+      </div>
+      </div>
+>>>>>>> 03476d61f5fed65c1cf6b21c75516815b85712e2
 <p>Visited from {{oneCity.startDate}} to {{oneCity.endDate}}</p>
 <p>{{oneCity.experience}}</p>
-<a href="/board-details/{{oneCity.country}}">Back to travel board</a>
+<p>- {{oneCity.user.firstName}} {{oneCity.user.lastName}} -</p>
+<a href="/board-details/{{oneCity.country._id}}">Back</a>
 </div>
-</div>
+<<<<<<< HEAD
 >>>>>>> 1096ac447d25ad9c1ca23f96d1280a2bad970287
+=======
+
+>>>>>>> 03476d61f5fed65c1cf6b21c75516815b85712e2
