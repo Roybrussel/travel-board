@@ -16,9 +16,13 @@
                   </form>
             </div>
   {{/if}}
-<p>Visited from {{oneCity.startDate}} to {{oneCity.endDate}}</p>
-<p>{{oneCity.experience}}</p>
-<p>- {{oneCity.user.firstName}} {{oneCity.user.lastName}} -</p>
+  {{#if oneCity.startDate}}
+  {{#if oneCity.endDate}}
+<p class="visit-date">Visited from {{oneCity.startDate}} to {{oneCity.endDate}}</p>
+ {{/if}}
+{{/if}}
+<q class="city-experience">{{oneCity.experience}}</q>
+<p> - {{oneCity.user.firstName}} {{oneCity.user.lastName}} </p>
 
 <a href="/board-details/{{oneCity.country._id}}">Back</a>
 </div>

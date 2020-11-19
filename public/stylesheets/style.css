@@ -259,7 +259,8 @@ footer > div {
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
   padding: 3%;
-  border-radius: 3%; }
+  border-radius: 3%;
+  max-width: 25em; }
 
 .city-heading h1 {
   font-size: 4em;
@@ -272,6 +273,14 @@ footer > div {
 .city-heading h2 {
   font-size: 3em;
   font-weight: 700; }
+
+.one-city .edit-delete-btn-container {
+  margin: 4%; }
+
+.city-experience {
+  font-size: 2em;
+  font-style: italic;
+  text-align: center; }
 
 /* COLOR PALETTE
 Light-blue: #f1f6f9
