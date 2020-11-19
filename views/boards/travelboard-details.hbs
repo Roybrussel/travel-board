@@ -9,7 +9,7 @@
     <hr>
     {{#if user}}
     <a href="/add-city/{{travelBoard._id}}" type="button" class="btn btn-dark add-city-btn">Add new city</a>
-   {{/if}}
+    {{/if}}
     {{#if travelBoard.cities}}
     <div class="all-cities">
       {{#each travelBoard.cities}}
@@ -25,6 +25,15 @@
       </div>
       {{/each}}
     </div>
+    {{else}}
+    <div class="container empty-city-container">
+      <div>
+        <h3>Whoooaa!</h3>
+        <p>So many adventures, yet so empty.<br>Make sure to add a new city to your adventure.
+        </p>
+      </div>
+    </div>
     {{/if}}
+
   </div>
 </div>

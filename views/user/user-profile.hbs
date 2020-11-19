@@ -63,32 +63,21 @@
     </div>
   </div>
   {{else}}
-  <div class="container boards-header">
-    <div class="row">
-      <div class="col-sm">
-      </div>
-      <div class="col-sm boards-heading">
-        <h1>My Travel Boards</h1>
-      </div>
-      <div class="col-sm add-btn-container">
-        <a href="/add-travel-board/{{userInSession._id}}" type="button" class="btn btn-dark add-btn">Add</a>
-      </div>
+  <div class="container empty-travelboard-container">
+    <div>
+      <h3>Oooops!</h3>
+      <p>It seems that you haven't added a Travel Board yet.<br>Click the add button to share one of your
+        adventures.
+      </p>
     </div>
-    <div class="container empty-travelboard-container">
-      <div>
-        <h3>Oooops!</h3>
-        <p>It seems that you haven't added a Travel Board yet.<br>Click the add button to share one of your
-          adventures.
-        </p>
-      </div>
-    </div>
-    {{/if}}
-    {{else}}
-    <button type="button" class="btn btn-dark">
-      <a href="/login">
-        Login</a></button>
-    <button type="button" class="btn btn-dark">
-      <a href="/signup">Sign-up</a>
-    </button>
-    {{/if}}
+  </div>
+  {{/if}}
+  {{else}}
+  <button type="button" class="btn btn-dark">
+    <a href="/login">
+      Login</a></button>
+  <button type="button" class="btn btn-dark">
+    <a href="/signup">Sign-up</a>
+  </button>
+  {{/if}}
 </section>
