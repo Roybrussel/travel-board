@@ -60,8 +60,7 @@ footer {
   display: inline;
   margin: 0 auto;
   height: 100%;
-  width: auto;
-  object-fit: contain; }
+  width: auto; }
 
 .about-container {
   display: inline-block;
