@@ -13,10 +13,6 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get('/profile-design', (req, res, next) => {
-  res.render('profile-design');
-});
-
 function countChars(obj) {
   var strLength = obj.value.length;
   document.getElementById('currentEditProfile').innerHTML = strLength;

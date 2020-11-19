@@ -39,3 +39,11 @@
 .add-city-btn:active {
   background-color: #14274e !important;
 }
+
+.empty-city-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1.6em;
+}

@@ -9,22 +9,22 @@
     <hr>
     {{#if user}}
     <a href="/add-city/{{travelBoard._id}}" type="button" class="btn btn-dark add-city-btn">Add new city</a>
-   {{/if}}
+    {{/if}}
     {{#if travelBoard.cities}}
     <div class="all-cities">
       {{#each travelBoard.cities}}
-      <div class="card">
-        <img class="card-img-top" src="{{this.cityPictureUrl}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{this.city}}</h5>
-          <p class="card-text">{{this.experience}}</p>
-          <div class="travelboard-button-container">
-            <a href="/city-details/{{this._id}}" type="button">See more</a>
-          </div>
-        </div>
-      </div>
+{{> citypartial this}}
       {{/each}}
     </div>
+    {{else}}
+    <div class="container empty-city-container">
+      <div>
+        <h3>Whoooaa!</h3>
+        <p>So many adventures, yet so empty.<br>Make sure to add a new city to your adventure.
+        </p>
+      </div>
+    </div>
     {{/if}}
+
   </div>
 </div>
