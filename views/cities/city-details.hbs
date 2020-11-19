@@ -1,9 +1,14 @@
-<div class="container top-container">
-  <div class="one-city">
-<h1 class="city-header">{{oneCity.city}}</h1>
-<img src='{{oneCity.cityPictureUrl}}' alt='{{oneCity.city}}'>
+<div class="one-city">
+    <div class="city-heading" style="background-image: url({{oneCity.cityPictureUrl}})">
+      <div class="heading-text">
+      <h1>{{oneCity.city}}</h1>
+      <p>in</p>
+      <h2>{{oneCity.country.country}}</h2>
+      </div>
+      </div>
 <p>Visited from {{oneCity.startDate}} to {{oneCity.endDate}}</p>
 <p>{{oneCity.experience}}</p>
-<a href="/board-details/{{oneCity.country}}">Back to travel board</a>
+<p>- {{oneCity.user.firstName}} {{oneCity.user.lastName}} -</p>
+<a href="/board-details/{{oneCity.country._id}}">Back</a>
 </div>
-</div>
+

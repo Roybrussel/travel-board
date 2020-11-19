@@ -17,7 +17,7 @@ router.get('/add-city/:boardid', (req, res, next) => {
     .then((travelBoard) => {
       res.render('cities/add-city', {
         travelBoard,
-        userInSession: req.session.currentUser
+        userInSession: req.session.currentUser,
       });
     })
     .catch((error) => next(error));
@@ -76,10 +76,12 @@ router.get('/city-details/:id', (req, res, next) => {
   const { id } = req.params;
 
   City.findById(id)
+    .populate('user')
+    .populate('country')
     .then((oneCity) => {
       res.render('cities/city-details', {
         oneCity,
-        userInSession: req.session.currentUser
+        userInSession: req.session.currentUser,
       });
     })
     .catch((error) => next(error));
