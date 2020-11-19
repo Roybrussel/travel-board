@@ -1,9 +1,13 @@
 <div class="container top-container">
   <div class="board-details-wrapper">
-    <h1>{{travelBoard.country}}</h1>
-    <p>A board by {{travelBoard.user.firstName}} {{travelBoard.user.lastName}}</p>
-    <img src="{{travelBoard.travelBoardPictureUrl}}" alt="{{travelBoard.country}}">
-    <a href="/add-city/{{travelBoard._id}}" type="button" class="btn btn-dark add-btn">Add a new city</a>
+    <img class="country-img" src="{{travelBoard.travelBoardPictureUrl}}" alt="{{travelBoard.country}}">
+    <div class="board-info-container">
+      <h1>{{travelBoard.country}}</h1>
+      <p>{{travelBoard.experienceInput}}</p>
+      <p>A board by {{travelBoard.user.firstName}} {{travelBoard.user.lastName}}</p>
+    </div>
+    <hr>
+    <a href="/add-city/{{travelBoard._id}}" type="button" class="btn btn-dark add-city-btn">Add new city</a>
     {{#if travelBoard.cities}}
     <div class="all-cities">
       {{#each travelBoard.cities}}
@@ -12,14 +16,16 @@
         <div class="card-body">
           <h5 class="card-title">{{this.city}}</h5>
           <p class="card-text">{{this.experience}}</p>
-          <a href="/city-details/{{this._id}}" type="button">See more</a>
-          <div class="edit-delete-btn-container">
-            <a href="/edit-city/{{this._id}}" type="button" class="btn btn-dark travelboard-btn edit-btn btn-sm"><i
-                class="fas fa-pen travelboard-icon"></i></a>
-            <form action="/city-delete/{{this._id}}" method="post">
-              <button class="btn btn-danger travelboard-btn btn-sm" type="submit"><i
-                  class="fas fa-trash-alt travelboard-icon"></i></button>
-            </form>
+          <div class="travelboard-button-container">
+            <a href="/city-details/{{this._id}}" type="button">See more</a>
+            <div class="edit-delete-btn-container">
+              <a href="/edit-city/{{this._id}}" type="button" class="btn btn-dark travelboard-btn edit-btn btn-sm"><i
+                  class="fas fa-pen travelboard-icon"></i></a>
+              <form action="/city-delete/{{this._id}}" method="post">
+                <button class="btn btn-danger travelboard-btn btn-sm" type="submit"><i
+                    class="fas fa-trash-alt travelboard-icon"></i></button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
