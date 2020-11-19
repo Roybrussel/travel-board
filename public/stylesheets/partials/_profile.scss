@@ -3,19 +3,14 @@
 }
 
 .profile-img-container {
-  width: 15em;
-  height: 15em;
-  position: relative;
-  overflow: hidden;
+  max-width: 100%;
   border: 5px solid #14274e;
-  border-radius: 50% !important;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .profile-img {
-  display: inline;
-  margin: 0 auto;
-  height: 100%;
-  width: auto;
+  max-width: 100%;
 }
 
 .about-container {
@@ -35,8 +30,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 0.8em;
-  margin-bottom: 0.8em;
+  margin-top: 75px;
 }
 
 .travel-boards-container {
@@ -64,7 +58,7 @@
 .boards-heading {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
 }
 
 .add-btn-container {
@@ -78,17 +72,11 @@
   border-style: none;
 }
 
-.add-btn:hover,
-.add-btn:focus,
-.add-btn:active {
+.add-btn:hover, .add-btn:focus, .add-btn:active  {
   background-color: #14274e !important;
 }
 
 .logout-btn {
   background: none !important;
-  border: none;
-}
-
-h1 {
-  text-align: center;
+  border: none; 
 }
