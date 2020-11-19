@@ -142,6 +142,10 @@ footer {
 .card-tag {
   text-decoration: none; }
 
+.see-more-btn-container {
+  display: flex;
+  align-items: center; }
+
 .travelboard-button-container {
   display: flex; }
 
@@ -150,14 +154,22 @@ footer {
   justify-content: end;
   margin: 0 auto; }
 
+.edit-delete-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .travelboard-btn {
-  margin-left: 1em; }
+  margin: 0.5em; }
 
 .travelboard-icon {
   font-size: 0.8em; }
 
 .edit-btn {
   background-color: #394867; }
+
+.profile-link {
+  font-size: 0.8em; }
 
 .see-more-btn:hover,
 .profile-link:hover {
@@ -167,7 +179,7 @@ footer {
   display: flex;
   justify-content: center; }
 
-.login-signup-container, .add-edit-travelboard-container {
+.login-signup-container {
   text-align: center;
   max-width: 25em;
   max-height: 100%;

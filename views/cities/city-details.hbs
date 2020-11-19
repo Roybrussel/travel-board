@@ -1,28 +1,29 @@
-<div class="one-city">
-  <div class="city-heading" style="background-image: url({{oneCity.cityPictureUrl}})">
-    <div class="heading-text">
+<div class="container top-container">
+  <div class="board-details-wrapper">
+    <img class="country-img" src="{{oneCity.cityPictureUrl}}" alt="{{oneCity.cityPictureUrl}}">
+    <div class="board-info-container">
       <h1>{{oneCity.city}}</h1>
-      <p>in</p>
-      <h2>{{oneCity.country.country}}</h2>
+      <h3>{{oneCity.country.country}}</h3>
+      <p>{{travelBoard.experienceInput}}</p>
+      {{#if oneCity.startDate}}
+      {{#if oneCity.endDate}}
+      <p class="visit-date">{{oneCity.startDate}} - {{oneCity.endDate}}</p>
+      {{/if}}
+      {{/if}}
+      {{#if user}}
+      <div class="edit-delete-btns">
+        <a title="Edit city" href="/edit-city/{{oneCity._id}}" type="button"
+          class="btn btn-dark travelboard-btn edit-btn btn-sm"><i class="fas fa-pen travelboard-icon"></i></a>
+        <form action="/city-delete/{{oneCity._id}}" method="post">
+          <button title="Delete city" class="btn btn-danger travelboard-btn btn-sm" type="submit"><i
+              class="fas fa-trash-alt travelboard-icon"></i></button>
+        </form>
       </div>
-      </div>
-       {{#if user}}
-               <div class="edit-delete-btn-container">
-                  <a title="Edit city" href="/edit-city/{{oneCity._id}}" type="button"
-                    class="btn btn-dark travelboard-btn edit-btn btn-sm"><i class="fas fa-pen travelboard-icon"></i></a>
-                  <form action="/city-delete/{{oneCity._id}}" method="post">
-                  <button title="Delete city" class="btn btn-danger travelboard-btn btn-sm" type="submit"><i
-                    class="fas fa-trash-alt travelboard-icon"></i></button>
-                  </form>
-            </div>
-  {{/if}}
-  {{#if oneCity.startDate}}
-  {{#if oneCity.endDate}}
-<p class="visit-date">Visited from {{oneCity.startDate}} to {{oneCity.endDate}}</p>
- {{/if}}
-{{/if}}
-<q class="city-experience">{{oneCity.experience}}</q>
-<p> - {{oneCity.user.firstName}} {{oneCity.user.lastName}} </p>
-
-<a href="/board-details/{{oneCity.country._id}}">Back</a>
+      {{/if}}
+    </div>
+    <hr>
+    <q class="city-experience">{{oneCity.experience}}</q>
+    <p> - {{oneCity.user.firstName}} {{oneCity.user.lastName}} </p>
+    <a href="/board-details/{{oneCity.country._id}}" class="btn btn-dark add-city-btn"> Back</a>
+  </div>
 </div>
