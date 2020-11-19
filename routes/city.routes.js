@@ -104,9 +104,9 @@ router.post("/city-delete/:id", (req, res, next) => {
     );
 });
 
-router.get("/edit-city/:id", (req, res, next) => {
+router.get('/edit-city/:id', (req, res, next) => {
   if (!req.session.currentUser) {
-    res.redirect("/login");
+    res.redirect('/login');
     return;
   }
 
@@ -114,7 +114,7 @@ router.get("/edit-city/:id", (req, res, next) => {
 
   City.findById(id)
     .then((oneCity) => {
-      res.render("cities/edit-city", {
+      res.render('cities/edit-city', {
         oneCity,
         userInSession: req.session.currentUser,
       });
