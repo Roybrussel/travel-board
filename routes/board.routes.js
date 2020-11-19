@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fileUploader = require('../configs/cloudinary.config');
-const Travelboard = require('../models/Travelboard.model');
+const Travelboard = require('../models/travelboard.model');
 const User = require('../models/User.model');
 
 router.get('/discover', (req, res, next) => {

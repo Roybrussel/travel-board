@@ -6,18 +6,19 @@
       <h2>{{oneCity.country.country}}</h2>
       </div>
       </div>
-<p>Visited from {{oneCity.startDate}} to {{oneCity.endDate}}</p>
-<p>{{oneCity.experience}}</p>
-<p>- {{oneCity.user.firstName}} {{oneCity.user.lastName}} -</p>
- {{#if user}}
+       {{#if user}}
                <div class="edit-delete-btn-container">
-                  <a title="Edit city" href="/edit-city/{{this._id}}" type="button"
+                  <a title="Edit city" href="/edit-city/{{oneCity._id}}" type="button"
                     class="btn btn-dark travelboard-btn edit-btn btn-sm"><i class="fas fa-pen travelboard-icon"></i></a>
-                  <form action="/city-delete/{{this._id}}" method="post">
+                  <form action="/city-delete/{{oneCity._id}}" method="post">
                   <button title="Delete city" class="btn btn-danger travelboard-btn btn-sm" type="submit"><i
                     class="fas fa-trash-alt travelboard-icon"></i></button>
                   </form>
             </div>
   {{/if}}
+<p>Visited from {{oneCity.startDate}} to {{oneCity.endDate}}</p>
+<p>{{oneCity.experience}}</p>
+<p>- {{oneCity.user.firstName}} {{oneCity.user.lastName}} -</p>
+
 <a href="/board-details/{{oneCity.country._id}}">Back</a>
 </div>
