@@ -6,7 +6,15 @@ const User = require('../models/User.model');
 
 router.get('/discover', (req, res, next) => {
   Travelboard.find({})
-    .then((allBoards) => res.render('boards/discover-boards', { allBoards }))
+    .then((allBoards) => {
+      if (req.session.currentUser) {
+        userInSession = req.session.currentUser;
+        res.render('boards/discover-boards', { allBoards, userInSession });
+        return;
+      }
+
+      res.render('boards/discover-boards', { allBoards });
+    })
     .catch((error) => next(error));
 });
 
@@ -61,7 +69,10 @@ router.get('/edit-travel-board/:id', (req, res, next) => {
 
   Travelboard.findById(id)
     .then((travelBoard) => {
-      res.render('boards/edit-travel-board', { travelBoard });
+      res.render('boards/edit-travel-board', {
+        travelBoard,
+        userInSession: req.session.currentUser,
+      });
     })
     .catch((error) => next(error));
 });
@@ -100,12 +111,30 @@ router.post(
 router.get('/board-details/:id', (req, res, next) => {
   const { id } = req.params;
 
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+    return;
+  }
+
+  let userid = req.session.currentUser._id;
+  let user = {};
+
   Travelboard.findById(id)
+    .populate('user')
     .populate('cities')
     .then((travelBoard) => {
-      res.render('boards/travelboard-details', {
-        travelBoard,
-      });
+      if (userid == travelBoard.user) {
+        res.render('boards/travelboard-details', {
+          travelBoard,
+          user,
+          userInSession: req.session.currentUser
+        });
+      } else {
+        res.render('boards/travelboard-details', {
+          travelBoard,
+          userInSession: req.session.currentUser
+        });
+      }
     })
     .catch((error) => next(error));
 });

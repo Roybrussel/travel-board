@@ -11,8 +11,8 @@ const citySchema = new Schema(
       type: String,
       default: './images/default-profile-img.png',
     },
-    startDate: { type: Date },
-    endDate: { type: Date },
+    startDate: { type: String },
+    endDate: { type: String },
   },
   {
     timestamps: true,

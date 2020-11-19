@@ -17,6 +17,7 @@ router.get("/add-city/:boardid", (req, res, next) => {
     .then((travelBoard) => {
       res.render("cities/add-city", {
         travelBoard,
+        userInSession: req.session.currentUser,
       });
     })
     .catch((error) => next(error));
@@ -30,8 +31,8 @@ router.post(
     const {
       city,
       experience,
-      startDate,
-      endDate,
+      fullStartDate,
+      fullEndDate,
       existingCityPictureUrl,
     } = req.body;
 
@@ -41,6 +42,12 @@ router.post(
     } else {
       cityPictureUrl = existingCityPictureUrl;
     }
+
+    let startDate = new Date(fullStartDate);
+    let endDate = new Date(fullEndDate);
+
+    startDate = startDate.toDateString();
+    endDate = endDate.toDateString();
 
     City.create({
       city,
@@ -69,9 +76,12 @@ router.get("/city-details/:id", (req, res, next) => {
   const { id } = req.params;
 
   City.findById(id)
+    .populate("user")
+    .populate("country")
     .then((oneCity) => {
       res.render("cities/city-details", {
         oneCity,
+        userInSession: req.session.currentUser,
       });
     })
     .catch((error) => next(error));
@@ -94,9 +104,9 @@ router.post("/city-delete/:id", (req, res, next) => {
     );
 });
 
-router.get("/edit-city/:id", (req, res, next) => {
+router.get('/edit-city/:id', (req, res, next) => {
   if (!req.session.currentUser) {
-    res.redirect("/login");
+    res.redirect('/login');
     return;
   }
 
@@ -104,7 +114,10 @@ router.get("/edit-city/:id", (req, res, next) => {
 
   City.findById(id)
     .then((oneCity) => {
-      res.render("cities/edit-city", { oneCity });
+      res.render('cities/edit-city', {
+        oneCity,
+        userInSession: req.session.currentUser,
+      });
     })
     .catch((error) => next(error));
 });
@@ -118,10 +131,16 @@ router.post(
     const {
       city,
       experience,
-      startDate,
-      endDate,
+      fullStartDate,
+      fullEndDate,
       existingCityPictureUrl,
     } = req.body;
+
+    let startDate = new Date(fullStartDate);
+    let endDate = new Date(fullEndDate);
+
+    startDate = startDate.toDateString();
+    endDate = endDate.toDateString();
 
     let cityPictureUrl;
     if (req.file) {

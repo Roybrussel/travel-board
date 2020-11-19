@@ -66,4 +66,9 @@ app.use("/", board);
 const city = require("./routes/city.routes");
 app.use("/", city);
 
+function countChars(obj) {
+  var strLength = obj.value.length;
+  document.getElementById("currentEditProfile").innerHTML = strLength;
+}
+
 module.exports = app;
