@@ -75,14 +75,25 @@ router.post(
 router.get("/city-details/:id", (req, res, next) => {
   const { id } = req.params;
 
+  let userid = req.session.currentUser._id;
+  let user = {};
+
   City.findById(id)
     .populate("user")
     .populate("country")
     .then((oneCity) => {
-      res.render("cities/city-details", {
-        oneCity,
-        userInSession: req.session.currentUser,
-      });
+      if (userid == oneCity.user._id) {
+        res.render('cities/city-details', {
+          oneCity,
+          userInSession: req.session.currentUser,
+          user,
+        });
+      } else {
+        res.render('cities/city-details', {
+          oneCity,
+          userInSession: req.session.currentUser,
+        });
+      }
     })
     .catch((error) => next(error));
 });

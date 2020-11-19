@@ -1,0 +1,18 @@
+<div class="card">
+              <img class="card-img-top" src="{{this.cityPictureUrl}}" alt="Card image cap">
+              <div class="card-body">
+              <h5 class="card-title">{{this.city}}</h5>
+              <p class="card-text">{{this.experience}}</p>
+              <a href="/city-details/{{this._id}}" type="button">See more</a>
+             {{#if user}}
+              <div class="edit-delete-btn-container">
+                  <a title="Edit city" href="/edit-city/{{this._id}}" type="button"
+                    class="btn btn-dark travelboard-btn edit-btn btn-sm"><i class="fas fa-pen travelboard-icon"></i></a>
+                  <form action="/city-delete/{{this._id}}" method="post">
+                  <button title="Delete city" class="btn btn-danger travelboard-btn btn-sm" type="submit"><i
+                    class="fas fa-trash-alt travelboard-icon"></i></button>
+                  </form>
+            </div>
+            {{/if}}
+  </div>
+</div>
