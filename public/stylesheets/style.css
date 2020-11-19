@@ -239,7 +239,8 @@ footer {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 1.2em; }
 
 .country-img {
   width: 100%;
