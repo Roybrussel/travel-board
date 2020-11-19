@@ -1,19 +1,18 @@
 const mongoose = require('mongoose');
-const MONGODB_URI =
-  process.env.MONGODB_URI || 'mongodb://localhost/travel-board';
+const MONGO_ATLAS_URI = process.env.MONGO_ATLAS_URI;
 
 mongoose
-  .connect(MONGODB_URI, {
+  .connect(MONGO_ATLAS_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
   .then(() =>
-    console.log(`Successfully connected to the database ${MONGODB_URI}`)
+    console.log(`Successfully connected to the database ${MONGO_ATLAS_URI}`)
   )
   .catch((error) => {
     console.error(
-      `An error ocurred trying to connect to the database ${MONGODB_URI}: `,
+      `An error ocurred trying to connect to the database ${MONGO_ATLAS_URI}: `,
       error
     );
     process.exit(1);
