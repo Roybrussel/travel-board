@@ -27,9 +27,8 @@
   <div class="container boards-header">
     <div class="row">
       <div class="col-sm">
+         <h1>{{foundUser.firstName}}'s Travel Boards</h1>
       </div>
-      <div class="col-sm boards-heading">
-        <h1>{{foundUser.firstName}}'s Travel Boards</h1>
       </div>
     </div>
   </div>
@@ -37,7 +36,7 @@
     {{#if foundUser.travelBoards}}
     <div class="travel-boards-container">
       {{#each foundUser.travelBoards}}
-   {{> discoverboardpartial this}}
+   {{> otheruserboardpartial this}}
       {{/each}}
     </div>
     {{/if}}

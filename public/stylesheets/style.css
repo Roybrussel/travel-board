@@ -160,7 +160,8 @@ h1 {
 .edit-btn {
   background-color: #394867; }
 
-.see-more-btn:hover {
+.see-more-btn:hover,
+.profile-link:hover {
   text-decoration: underline !important; }
 
 .form-container {
