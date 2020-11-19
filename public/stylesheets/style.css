@@ -49,16 +49,18 @@ footer {
   display: inline-block; }
 
 .profile-img-container {
-  width: 50em;
-  max-width: 100%;
-  height: auto;
+  width: 15em;
+  height: 15em;
+  position: relative;
+  overflow: hidden;
   border: 5px solid #14274e;
-  border-radius: 50%;
-  overflow: hidden; }
+  border-radius: 50% !important; }
 
 .profile-img {
-  max-width: 100%;
-  height: auto; }
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto; }
 
 .about-container {
   display: inline-block;
