@@ -25,7 +25,6 @@
 </section>
 <hr>
 <section id=" travel-boards">
-  {{#if userInSession.travelBoards}}
   <div class="container boards-header">
     <div class="row">
       <div class="col-sm">
@@ -39,45 +38,29 @@
     </div>
   </div>
   <div class="container">
+    {{#if userInSession.travelBoards}}
     <div class="travel-boards-container">
       {{#each userInSession.travelBoards}}
-      <div class="card">
-        <img class="card-img-top" src="{{this.travelBoardPictureUrl}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{this.country}}</h5>
-          <p class="card-text">{{this.experienceInput}}</p>
-          <div class="travelboard-button-container">
-            <a href="/board-details/{{this._id}}" class="see-more-btn" type="button">See more</a>
-            <div class="edit-delete-btn-container">
-              <a href="/edit-travel-board/{{this._id}}" type="button"
-                class="btn btn-dark travelboard-btn edit-btn btn-sm"><i class="fas fa-pen travelboard-icon"></i></a>
-              <form action="/board-delete/{{this._id}}" method="post">
-                <button class="btn btn-danger travelboard-btn btn-sm" type="submit"><i
-                    class="fas fa-trash-alt travelboard-icon"></i></button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+   {{> travelboardpartial this}}
       {{/each}}
     </div>
-  </div>
-  {{else}}
-  <div class="container empty-travelboard-container">
-    <div>
-      <h3>Oooops!</h3>
-      <p>It seems that you haven't added a Travel Board yet.<br>Click the add button to share one of your
-        adventures.
-      </p>
+    {{else}}
+       <div class="container empty-travelboard-container">
+      <div>
+        <h3>Oooops!</h3>
+        <p>It seems that you haven't added a Travel Board yet.<br>Click the add button to share one of your
+          adventures.
+        </p>
+      </div>
     </div>
+    {{/if}}
   </div>
-  {{/if}}
-  {{else}}
-  <button type="button" class="btn btn-dark">
-    <a href="/login">
-      Login</a></button>
-  <button type="button" class="btn btn-dark">
-    <a href="/signup">Sign-up</a>
-  </button>
-  {{/if}}
+    {{else}}
+    <button type="button" class="btn btn-dark">
+      <a href="/login">
+        Login</a></button>
+    <button type="button" class="btn btn-dark">
+      <a href="/signup">Sign-up</a>
+    </button>
+    {{/if}}
 </section>

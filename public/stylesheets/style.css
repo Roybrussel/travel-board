@@ -106,12 +106,17 @@ footer {
   background-color: #394867;
   border-style: none; }
 
-.add-btn:hover, .add-btn:focus, .add-btn:active {
+.add-btn:hover,
+.add-btn:focus,
+.add-btn:active {
   background-color: #14274e !important; }
 
 .logout-btn {
   background: none !important;
   border: none; }
+
+h1 {
+  text-align: center; }
 
 .card {
   width: 350px;
