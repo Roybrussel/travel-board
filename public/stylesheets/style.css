@@ -214,6 +214,11 @@ footer > div {
 .all-cities .card {
   margin: 2%; }
 
+.country-img {
+  width: 100%;
+  height: 12em;
+  object-fit: cover; }
+
 .one-city {
   display: flex;
   flex-direction: column; }
