@@ -3,7 +3,7 @@
         <div class="card-body">
           <h5 class="card-title">{{this.country}}</h5>
           <q class="card-text">{{this.experienceInput}}</q>
-          <p>- {{this.user.firstName}} {{this.user.lastName}}</p>
+          <p>- <a href="/{{this.user._id}}/profile">{{this.user.firstName}} {{this.user.lastName}}</a></p>
           <div class="travelboard-button-container">
             <a href="/board-details/{{this._id}}" class="see-more-btn" type="button">See more</a>
           </div>

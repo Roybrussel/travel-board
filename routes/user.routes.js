@@ -20,6 +20,26 @@ router.get('/profile', (req, res, next) => {
   }
 });
 
+router.get('/:id/profile', (req, res, next) => {
+  const { id } = req.params;
+
+  if (req.session.currentUser) {
+    User.findById(id)
+      .populate('travelBoards')
+      .then((foundUser) => {
+        res.render('user/other-user-profile', {
+          foundUser,
+          userInSession: req.session.currentUser,
+        });
+      })
+      .catch((err) => {
+        `Error while getting user from the DB: ${err}`;
+      });
+  } else {
+    res.redirect('login');
+  }
+});
+
 router.get('/edit-profile/:id', (req, res, next) => {
   if (!req.session.currentUser) {
     res.redirect('/login');
