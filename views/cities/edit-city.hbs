@@ -12,12 +12,16 @@
       </div>
       <div class="form-group">
         <label for="startDate">When did your trip start?</label>
-        <input type="date" class="form-control" id="startDate" name="fullStartDate" value="{{oneCity.startDate}}">
+        <input type="date" class="form-control" id="startDate" name="fullStartDate">
+        <input type="text" name="existingStartDate" hidden id="defaultCityPictureInput"
+          value="{{oneCity.startDate}}">
       </div>
 
       <div class="form-group">
         <label for="endDate">When did your trip end?</label>
-        <input type="date" class="form-control" id="endDate" name="fullEndDate" value="{{oneCity.endDate}}">
+        <input type="date" class="form-control" id="endDate" name="fullEndDate">
+        <input type="text" name="existingEndDate" hidden id="defaultCityPictureInput"
+          value="{{oneCity.EndDate}}">
       </div>
 
       <div class="form-group">
