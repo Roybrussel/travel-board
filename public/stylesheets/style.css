@@ -223,6 +223,19 @@ footer {
   max-width: 100%;
   height: auto; }
 
+.mapouter {
+  position: relative;
+  text-align: center; }
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important; }
+
+.googlemaps-container {
+  width: 800px;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em; }
+
 .not-found {
   height: 100%;
   display: flex;
