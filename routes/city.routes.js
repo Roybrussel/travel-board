@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const fileUploader = require('../configs/cloudinary.config');
 const Travelboard = require('../models/travelboard.model');
-const User = require('../models/User.model');
 const City = require('../models/City.model');
 
 router.get('/add-city/:boardid', (req, res, next) => {
