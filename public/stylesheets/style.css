@@ -218,16 +218,7 @@ footer > div {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-<<<<<<< HEAD
   align-items: center; }
-=======
-  align-items: center;
-  margin-bottom: 1.6em;
-  width: 100%; }
-
-.all-cities .card {
-  margin: 2%; }
->>>>>>> 5380969c3d56ff3a8839f0fc856e195b8f86a505
 
 .country-img {
   width: 100%;
