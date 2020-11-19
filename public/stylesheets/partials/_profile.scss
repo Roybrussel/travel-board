@@ -3,17 +3,20 @@
 }
 
 .profile-img-container {
-  width: 50em;
-  max-width: 100%;
-  height: auto;
-  border: 5px solid #14274e;
-  border-radius: 50%;
+  width: 15em;
+  height: 15em;
+  position: relative;
   overflow: hidden;
+  border: 5px solid #14274e;
+  border-radius: 50% !important;
 }
 
 .profile-img {
-  max-width: 100%;
-  height: auto;
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+  object-fit:
 }
 
 .about-container {
