@@ -68,6 +68,7 @@ footer {
 
 .top-container {
   display: flex;
+  justify-content: center;
   width: 80vw;
   height: auto;
   padding-top: 8em; }
@@ -112,7 +113,8 @@ footer {
 .boards-heading {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  text-align: center; }
 
 .add-btn-container {
   display: flex;

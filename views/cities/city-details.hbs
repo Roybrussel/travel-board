@@ -21,16 +21,16 @@
         </div>
       </div>
     </div>
-        {{#if user}}
-      <div class="edit-delete-btns">
-        <a title="Edit city" href="/edit-city/{{oneCity._id}}" type="button"
-          class="btn btn-dark travelboard-btn edit-btn btn-sm"><i class="fas fa-pen travelboard-icon"></i></a>
-        <form action="/city-delete/{{oneCity._id}}" method="post">
-          <button title="Delete city" class="btn btn-danger travelboard-btn btn-sm" type="submit"><i
-              class="fas fa-trash-alt travelboard-icon"></i></button>
-        </form>
-      </div>
-      {{/if}}
-      <a href="/board-details/{{oneCity.country._id}}" class="btn btn-dark add-city-btn"> Back</a>
+    {{#if user}}
+    <div class="edit-delete-btns">
+      <a title="Edit city" href="/edit-city/{{oneCity._id}}" type="button"
+        class="btn btn-dark travelboard-btn edit-btn btn-sm"><i class="fas fa-pen travelboard-icon"></i></a>
+      <form action="/city-delete/{{oneCity._id}}" method="post">
+        <button title="Delete city" class="btn btn-danger travelboard-btn btn-sm" type="submit"><i
+            class="fas fa-trash-alt travelboard-icon"></i></button>
+      </form>
+    </div>
+    {{/if}}
+    <a href="/board-details/{{oneCity.country._id}}" class="btn btn-dark add-city-btn"> Back</a>
   </div>
 </div>
