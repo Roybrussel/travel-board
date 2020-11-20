@@ -4,7 +4,9 @@
     <h3>Edit Travel Board</h3>
     <form action="/edit-travel-board/{{travelBoard._id}}" method="post" enctype="multipart/form-data">
       <div class="formInput">
-        <input type="text" class="form-control-plaintext" id="country" name="country" value="{{travelBoard.country}}">
+        <div class="travelboard-input">
+          <input type="text" class="form-control-plaintext" id="country" name="country" value="{{travelBoard.country}}">
+        </div>
       </div>
       <div class="formInput">
         <div class="travelboard-input">
