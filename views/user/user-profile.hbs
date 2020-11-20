@@ -4,13 +4,11 @@
     <div class="container header-container">
       <div class="row">
         <div class="col-3">
-          <div class="profile-img-container" style="background-image: url({{userInSession.profilePictureUrl}})">
-          </div>
-          {{!-- {{#if userInSession.profilePictureUrl }}
-          <img src="{{userInSession.profilePictureUrl}}" class="profile-img" alt="profile-img">
-          {{else}}
-          <img src="/images/default-avatar.png" class="profile-img" alt="profile-img">
-          {{/if}} --}}
+          {{#if userInSession.profilePictureUrl}}
+          <div class="profile-img-container" style="background-image: url({{userInSession.profilePictureUrl}})"></div>
+         {{else}}
+         <div class="profile-img-container" style="background-image: url(/images/default-avatar.png)"></div>
+         {{/if}}
         </div>
         <div class="col-8">
           <h3>{{userInSession.firstName}} {{userInSession.lastName}}</h3>

@@ -4,13 +4,11 @@
     <div class="container header-container">
       <div class="row">
         <div class="col-3">
-          <div class="profile-img-container" style="background-image: url({{foundUser.profilePictureUrl}})">
-          </div>
-          {{!-- {{#if foundUser.profilePictureUrl }}
-          <img src="{{foundUser.profilePictureUrl}}" class="profile-img" alt="profile-img">
+          {{#if foundUser.profilePictureUrl}}
+          <div class="profile-img-container" style="background-image: url({{foundUser.profilePictureUrl}})"></div>
           {{else}}
-          <img src="/images/default-profile-img.png" class="profile-img" alt="profile-img">
-          {{/if}} --}}
+         <div class="profile-img-container" style="background-image: url(/images/default-avatar.png)"></div>
+         {{/if}}
         </div>
         <div class="col-8">
           <h3>{{foundUser.firstName}} {{foundUser.lastName}}</h3>
