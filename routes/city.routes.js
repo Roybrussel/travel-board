@@ -35,11 +35,8 @@ router.post(
       existingCityPictureUrl,
     } = req.body;
 
-    let startDate = new Date(fullStartDate);
-    let endDate = new Date(fullEndDate);
-
-    startDate = startDate.toDateString();
-    endDate = endDate.toDateString();
+    let startDate = new Date(fullStartDate).toDateString();
+    let endDate = new Date(fullEndDate).toDateString();
 
     let cityPictureUrl;
     if (req.file) {
@@ -138,7 +135,30 @@ router.post(
   (req, res, next) => {
     const { id } = req.params;
 
-    const { city, experience, existingCityPictureUrl } = req.body;
+    const {
+      city,
+      experience,
+      existingCityPictureUrl,
+      fullStartDate,
+      existingStartDate,
+      fullEndDate,
+      existingEndDate,
+    } = req.body;
+
+    let endDate;
+    let startDate;
+
+    if (!fullStartDate) {
+      startDate = existingStartDate;
+    } else {
+      startDate = new Date(fullStartDate).toDateString();
+    }
+
+    if (!fullEndDate) {
+      endDate = existingEndDate;
+    } else {
+      endDate = new Date(fullEndDate).toDateString();
+    }
 
     let cityPictureUrl;
     if (req.file) {
@@ -153,6 +173,8 @@ router.post(
         city,
         experience,
         cityPictureUrl,
+        endDate,
+        startDate,
       },
       { new: true }
     )
