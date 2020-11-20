@@ -37,8 +37,24 @@ hr {
   border-radius: 5px;
 }
 
-.top-container {
-  display: flex;
-  justify-content: center;
-  padding-top: 8em;
+header {
+  padding-top: 6.8em;
+}
+
+.header-container {
+  height: 15em;
+  margin-bottom: 1em;
+}
+
+.test-img-container {
+  height: 15vw;
+  width: 15vw;
+  background-size: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.about-text {
+  text-align: justify;
 }

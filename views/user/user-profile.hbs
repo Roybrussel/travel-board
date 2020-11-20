@@ -1,31 +1,32 @@
 {{#if userInSession}}
 <section id="profile">
-  <div class="container top-container">
-    <div class="row">
-      <div class="col-3 container test-container">
-        <div class="profile-img-container" style="background-image: url({{userInSession.profilePictureUrl}})">
+  <header>
+    <div class="container header-container">
+      <div class="row">
+        <div class="col-3">
+          <div class="profile-img-container" style="background-image: url({{userInSession.profilePictureUrl}})">
+          </div>
           {{!-- {{#if userInSession.profilePictureUrl }}
           <img src="{{userInSession.profilePictureUrl}}" class="profile-img" alt="profile-img">
           {{else}}
           <img src="/images/default-avatar.png" class="profile-img" alt="profile-img">
           {{/if}} --}}
         </div>
-      </div>
-      <div class="col-8">
-        <div class="about-container">
+        <div class="col-8">
           <h3>{{userInSession.firstName}} {{userInSession.lastName}}</h3>
           <a href="/edit-profile/{{userInSession._id}}">Edit Profile</a>
           <div class="text-container">
             <h5>About</h5>
-            <p>
+            <p class="about-text">
               {{userInSession.about}}</p>
           </div>
         </div>
       </div>
     </div>
+  </header>
 </section>
 <hr>
-<section id=" travel-boards">
+<section id="travel-boards">
   <div class="container boards-header">
     <div class="row">
       <div class="col-sm">
