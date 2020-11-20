@@ -20,6 +20,10 @@ html {
   margin: 0 auto;
 }
 
+nav {
+  z-index: 9999;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -41,20 +45,3 @@ header {
   padding-top: 6.8em;
 }
 
-.header-container {
-  height: 15em;
-  margin-bottom: 1em;
-}
-
-.test-img-container {
-  height: 15vw;
-  width: 15vw;
-  background-size: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  background-repeat: no-repeat;
-}
-
-.about-text {
-  text-align: justify;
-}
