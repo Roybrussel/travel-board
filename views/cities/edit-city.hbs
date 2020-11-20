@@ -1,38 +1,29 @@
 <div class="container top-container">
-  <div class="container">
-    <h1>Edit your board</h1>
+  <div class="container add-edit-travelboard-container">
+    <h3>Edit your board</h3>
     <form action="/edit-city/{{oneCity._id}}" method="post" enctype="multipart/form-data">
-      <div class="form-group">
-        <label for="city">Name of city or town:</label>
-        <input type="text" class="form-control" id="city" name="city" placeholder="Where have you been?" value="{{oneCity.city}}">
-      </div>
-      <div class="form-group">
-        <label for="experience">Tell us about your travel experience</label>
-        <textarea class="form-control" id="experience" name="experience" rows="3" maxlength="80">{{oneCity.experience}}</textarea>
-      </div>
-      <div class="form-group">
-        <label for="startDate">When did your trip start?</label>
-        <input type="date" class="form-control" id="startDate" name="fullStartDate">
-        <input type="text" name="existingStartDate" hidden id="defaultCityPictureInput"
-          value="{{oneCity.startDate}}">
-      </div>
-
-      <div class="form-group">
-        <label for="endDate">When did your trip end?</label>
-        <input type="date" class="form-control" id="endDate" name="fullEndDate">
-        <input type="text" name="existingEndDate" hidden id="defaultCityPictureInput"
-          value="{{oneCity.EndDate}}">
-      </div>
-
-      <div class="form-group">
-        <label for="cityPictureUrl">Upload a picture:</label>
-        <input type="file" name="cityPictureUrl" id="cityPictureUrl" />
-        <input type="text" name="existingCityPictureUrl" hidden id="defaultCityPictureInput"
-          value="{{oneCity.cityPictureUrl}}">
-      </div>
-
-      <div class="container">
-        <button type="button submit" class="btn btn-dark add-btn">Save changes</button>
+      <div class="formInput">
+        <div class="travelboard-input">
+          <input type="text" class="form-control-plaintext" id="city" name="city" placeholder="Where have you been?" value="{{oneCity.city}}">
+        </div>
+        <div class="travelboard-input">
+          <textarea class="form-control-plaintext" id="experience" name="experience"
+            placeholder="Tell us about your experience!" rows="2" onkeyup="countChars(this);" maxlength="80">{{oneCity.experience}}</textarea>
+          <div class="charCount">
+            <span id="current">0</span>
+            <span id="maximum">/ 80</span>
+          </div>
+        </div>
+        <div class="form-group upload-container">
+          <label for="cityPictureUrl">Upload picture</label>
+          <input type="file" name="cityPictureUrl" id="cityPictureUrl" />
+          <input type="text" name="existingCityPictureUrl" hidden id="defaultCityPictureInput"
+            value="{{oneCity.cityPictureUrl}}">
+        </div>
+        <div>
+          <button type="button submit" class="btn btn-primary mb-2">Save changes</button>
+        </div>
       </div>
     </form>
   </div>
+</div>

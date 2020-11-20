@@ -5,12 +5,25 @@
       <h1>{{oneCity.city}}</h1>
       <h3>{{oneCity.country.country}}</h3>
       <p>{{travelBoard.experienceInput}}</p>
-      {{#if oneCity.startDate}}
-      {{#if oneCity.endDate}}
-      <p class="visit-date">{{oneCity.startDate}} - {{oneCity.endDate}}</p>
-      {{/if}}
-      {{/if}}
-      {{#if user}}
+    </div>
+    <hr>
+    <q class="city-experience">{{oneCity.experience}}</q>
+    <p> - {{oneCity.user.firstName}} {{oneCity.user.lastName}}</p>
+    {{#if oneCity.startDate}}
+    {{#if oneCity.endDate}}
+    <p class="visit-date">{{oneCity.startDate}} - {{oneCity.endDate}}</p>
+    {{/if}}
+    {{/if}}
+    <div class="googlemaps-container">
+      <div class="mapouter">
+        <div class="gmap_canvas"><iframe width="100%" id="gmap_canvas"
+            src="https://maps.google.com/maps?q={{oneCity.city}}%2C%20{{oneCity.country.country}}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+            href="https://www.embedgooglemap.net/1/"></a>
+        </div>
+      </div>
+    </div>
+        {{#if user}}
       <div class="edit-delete-btns">
         <a title="Edit city" href="/edit-city/{{oneCity._id}}" type="button"
           class="btn btn-dark travelboard-btn edit-btn btn-sm"><i class="fas fa-pen travelboard-icon"></i></a>
@@ -20,10 +33,6 @@
         </form>
       </div>
       {{/if}}
-    </div>
-    <hr>
-    <q class="city-experience">{{oneCity.experience}}</q>
-    <p> - {{oneCity.user.firstName}} {{oneCity.user.lastName}} </p>
-    <a href="/board-details/{{oneCity.country._id}}" class="btn btn-dark add-city-btn"> Back</a>
+      <a href="/board-details/{{oneCity.country._id}}" class="btn btn-dark add-city-btn"> Back</a>
   </div>
 </div>

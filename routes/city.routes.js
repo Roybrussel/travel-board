@@ -138,29 +138,7 @@ router.post(
   (req, res, next) => {
     const { id } = req.params;
 
-    const {
-      city,
-      experience,
-      existingStartDate,
-      fullStartDate,
-      existingEndDate,
-      fullEndDate,
-      existingCityPictureUrl,
-    } = req.body;
-
-    let startDate;
-    if (!fullStartDate) {
-      startDate = existingStartDate;
-    } else {
-      startDate = new Date(fullStartDate).toDateString();
-    }
-
-    let endDate;
-    if (!fullEndDate) {
-      endDate = existingEndDate;
-    } else {
-      endDate = new Date(fullEndDate).toDateString();
-    }
+    const { city, experience, existingCityPictureUrl } = req.body;
 
     let cityPictureUrl;
     if (req.file) {

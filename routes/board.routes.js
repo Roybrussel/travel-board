@@ -119,6 +119,7 @@ router.get('/board-details/:id', (req, res, next) => {
 
   let userid = req.session.currentUser._id;
   let user = {};
+  let user2 = {};
 
   Travelboard.findById(id)
     .populate('user')
@@ -128,6 +129,7 @@ router.get('/board-details/:id', (req, res, next) => {
         res.render('boards/travelboard-details', {
           travelBoard,
           user,
+          user2,
           userInSession: req.session.currentUser,
         });
       } else {
