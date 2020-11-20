@@ -1,7 +1,7 @@
 {{#if userInSession}}
 <section id="profile">
   <div class="container top-container">
-    <div class="row">
+    <div class="row profile-info-container">
       <div class="col-3">
         <div class="profile-img-container">
           {{#if userInSession.profilePictureUrl }}
@@ -11,7 +11,8 @@
           {{/if}}
         </div>
       </div>
-      <div class="col-9">
+
+      <div class="col-8">
         <div class="about-container">
           <h3>{{userInSession.firstName}} {{userInSession.lastName}}</h3>
           <a href="/edit-profile/{{userInSession._id}}">Edit Profile</a>
