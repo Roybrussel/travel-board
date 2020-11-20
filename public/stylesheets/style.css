@@ -60,7 +60,7 @@ footer {
   box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75); }
 
 .header-container {
-  height: 15em;
+  height: 100%;
   margin-bottom: 1em; }
 
 .about-text {
