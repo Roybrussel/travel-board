@@ -152,8 +152,6 @@ router.post(
       {
         city,
         experience,
-        startDate,
-        endDate,
         cityPictureUrl,
       },
       { new: true }
