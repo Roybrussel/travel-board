@@ -20,6 +20,18 @@
           <input type="text" name="existingCityPictureUrl" hidden id="defaultCityPictureInput"
             value="{{oneCity.cityPictureUrl}}">
         </div>
+             <div class="travelboard-input">
+          <label for="startDate">From date</label>
+          <input type="date" class="form-control-plaintext" id="startDate" name="fullStartDate">
+         <input type="text" name="existingStartDate" hidden id="existingStartDate"
+            value="{{oneCity.startDate}}">
+        </div>
+        <div class="travelboard-input">
+          <label for="endDate">To date</label>
+          <input type="date" class="form-control-plaintext" id="endDate" name="fullEndDate">
+        <input type="text" name="existingEndDate" hidden id="existingEndDate"
+            value="{{oneCity.endDate}}">
+        </div>
         <div>
           <button type="button submit" class="btn btn-primary mb-2">Save changes</button>
         </div>
