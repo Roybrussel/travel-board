@@ -11,7 +11,6 @@ const userSchema = new Schema(
     profilePictureUrl: {
       type: String,
     },
-    favoriteDestination: String,
     about: String,
   },
   {

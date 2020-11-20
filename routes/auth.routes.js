@@ -21,7 +21,6 @@ router.post('/signup', (req, res, next) => {
     firstName,
     lastName,
     about,
-    favoriteDestination,
     passWord,
     passWordRepeat,
   } = req.body;
@@ -29,6 +28,11 @@ router.post('/signup', (req, res, next) => {
   if (!email || !passWord || !passWordRepeat) {
     res.render('auth/signup', {
       email,
+      firstName,
+      lastName,
+      about,
+      passWord,
+      passWordRepeat,
       errorMessage:
         'Email and password are mandatory. Please fill in these fields',
     });
@@ -39,6 +43,12 @@ router.post('/signup', (req, res, next) => {
 
   if (!emailRegex.test(email)) {
     res.render('auth/signup', {
+      email,
+      firstName,
+      lastName,
+      about,
+      passWord,
+      passWordRepeat,
       errorMessage: 'Please fill in a valid email address',
     });
     return;
@@ -51,6 +61,11 @@ router.post('/signup', (req, res, next) => {
       if (!strongPassRegex.test(passWord)) {
         res.render('auth/signup', {
           email,
+          firstName,
+          lastName,
+          about,
+          passWord,
+          passWordRepeat,
           errorMessage:
             'Password should be a least 8 characters long and contain a number, a small letter and a capital letter.',
         });
@@ -60,6 +75,11 @@ router.post('/signup', (req, res, next) => {
       if (passWord !== passWordRepeat) {
         res.render('auth/signup', {
           email,
+          firstName,
+          lastName,
+          about,
+          passWord,
+          passWordRepeat,
           errorMessage: 'Passwords are not identical',
         });
         return;
@@ -72,7 +92,6 @@ router.post('/signup', (req, res, next) => {
           firstName,
           lastName,
           about,
-          favoriteDestination,
         });
 
         newUser
