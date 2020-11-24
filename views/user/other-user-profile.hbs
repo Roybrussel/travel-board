@@ -7,8 +7,8 @@
           {{#if foundUser.profilePictureUrl}}
           <div class="profile-img-container" style="background-image: url({{foundUser.profilePictureUrl}})"></div>
           {{else}}
-         <div class="profile-img-container" style="background-image: url(/images/default-avatar.png)"></div>
-         {{/if}}
+          <div class="profile-img-container" style="background-image: url(/images/default-avatar.png)"></div>
+          {{/if}}
         </div>
         <div class="col-8">
           <h3>{{foundUser.firstName}} {{foundUser.lastName}}</h3>
@@ -48,5 +48,5 @@
   <button type="button" class="btn btn-dark">
     <a href="/signup">Sign-up</a>
   </button>
-  {{/if}}
 </section>
+{{/if}}
